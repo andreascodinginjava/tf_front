@@ -1,0 +1,98 @@
+<div class="contenedor">
+    <div class="titulo">
+        <span>Trans Flash</span>
+    </div>
+    <div class="botones">
+        <a href="#">Sign Up</a>
+        <a href="/LogIn">Log In</a>
+    </div>
+</div>
+<div class="carrusel">
+    <app-carrusel></app-carrusel>
+</div>
+<div class="sobreNosotros">
+    <div class="tituloSB">
+        <span>Sobre Nosotros</span>
+    </div>
+    <div class="contenido">
+        <h2>Mision</h2>
+        <p>Hola como te va esta es la mision de la empresa</p>
+        <h2>Vision</h2>
+        <p>Hola como te va esta es la vision de la empresa</p>
+    </div>
+</div>
+<div class="contacto">
+    <div class="tituloC">
+        <span>Contacto</span>
+    </div>
+    <div class="contenido">
+        <form [formGroup]="contactForm" novalidate (ngSubmit)="onSubmit()">
+            <!--Nombres-->
+            <div class="error"
+                *ngIf="contactForm.controls['name'].invalid && (contactForm.controls['name'].touched || contactForm.controls['name'].dirty)">
+                <mat-error *ngIf="contactForm.controls['name'].hasError('required')">
+                    * Nombres es requerido
+                </mat-error>
+            </div>
+            <div class="campo">
+                <span>Nombres</span><br>
+                <input type="text" formControlName="name" autocomplete="off">
+            </div>
+            <!--Apellidos-->
+            <div class="error"
+                *ngIf="contactForm.controls['lastName'].invalid && (contactForm.controls['lastName'].touched || contactForm.controls['lastName'].dirty)">
+                <mat-error *ngIf="contactForm.controls['lastName'].hasError('required')">
+                    * Apellidos es requerido
+                </mat-error>
+            </div>
+            <div class="campo">
+                <span>Apellidos</span><br>
+                <input type="text" formControlName="lastName" autocomplete="off">
+            </div>
+            <!--Correo electronico-->
+            <div class="error"
+                *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].touched || contactForm.controls['email'].dirty)">
+                <mat-error *ngIf="contactForm.controls['email'].hasError('required')">
+                    * Correo electronico es requerido
+                </mat-error>
+                <mat-error *ngIf="contactForm.controls['email'].hasError('email')">
+                    * No es un correo electronico
+                </mat-error>
+            </div>
+            <div class="campo">
+                <span>Correo electronico</span><br>
+                <input type="email" formControlName="email" autocomplete="off">
+            </div>
+            <!--Celular-->
+            <div class="error"
+                *ngIf="contactForm.controls['cel'].invalid && (contactForm.controls['cel'].touched || contactForm.controls['cel'].dirty)">
+                <mat-error *ngIf="contactForm.controls['cel'].hasError('required')">
+                    * Celular es requerido
+                </mat-error>
+            </div>
+            <div class="campo">
+                <span>Celular</span><br>
+                <input type="number" formControlName="cel" autocomplete="off">
+            </div>
+            <!--Mensaje-->
+            <div class="error"
+                *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].touched || contactForm.controls['message'].dirty)">
+                <mat-error *ngIf="contactForm.controls['message'].hasError('required')">
+                    * Mensaje es requerido
+                </mat-error>                        
+            </div>
+            <div class="campo">
+                <span>Mensaje</span><br>
+                <div class="text">
+                    <textarea name="" id="" cols="30" rows="10" formControlName="message"></textarea>
+                </div>
+            </div>
+            <div class="infoRegis">
+                <button class="registro">Registrarme</button><br>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <footer>Todos los derechos reservados - Colombia 2022</footer>
+</div>

@@ -1,0 +1,258 @@
+.supercontenedor {
+    background-color: rgb(34, 40, 49);
+}
+
+.espacio {
+    height: 80px;
+}
+
+.contenedor {
+    width: 70%;
+    margin: auto;
+    background-color: rgb(57, 62, 70);
+    border-radius: 20px;
+}
+
+.titulo {
+    background-image: url('C:\Users\User\Documents\Proyecto\tf_front\src\assets\images\registroCliente.jpg');
+    background-position: center;
+	background-attachment: contain;
+	background-size: cover;
+    opacity: 40%;
+    height: 120px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.titulo span {
+    font-size: 40px;
+    color: rgb(247, 247, 247);
+    padding: 10px;
+}
+
+.titulo p {
+    font-size: 20px;
+    color: rgb(247, 247, 247);
+    padding: 10px;
+}
+
+.conductorInfo, .vehiculoInfo, .pagoInfo {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.formulario {
+    width: 80%;
+    margin: auto;
+}
+
+.formConductor, .formVehiculo, .formPago {
+    width: 70%;
+    text-align: left;
+}
+
+.imgConductor, .imgVehiculo, .imgPago {
+    width: 30%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.imgConductor, .imgVehiculo {
+    height: 550px;
+}
+
+.imgPago {
+    height: 350px;
+}
+
+.imgConductor img, .imgPago img {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    opacity: 40%;
+}
+
+.imgVehiculo img {
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    opacity: 40%;
+}
+
+.imgVehiculo {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid rgb(0, 146, 202);
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.shipping-card {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.campo {
+    border: 1px solid rgb(96, 100, 112);
+    margin-bottom: 10px;
+    border-radius: 30px;
+    box-shadow: 3px 5px rgba(23, 27, 34, 0.178);
+}
+
+#input-file {
+    border: 1px solid rgb(147, 222, 255);
+    margin-bottom: 10px;
+    border-radius: 30px;
+    box-shadow: 3px 5px rgba(23, 27, 34, 0.178);
+}
+
+.campo input {
+    background: none;
+    width: 90%;
+    border: none;
+    outline: none;
+    margin-left: 14px;
+    color: white;
+    font-size: 14px;
+}
+
+.campo span {
+    margin: 15px;
+    color: rgb(142, 144, 151);
+    font-size: 12px;
+    text-align: left;
+}
+
+.form-control-log:focus {
+    background: none;
+}
+
+.mat-select {
+    width: 90%;
+    margin-left: 14px;
+    color: white !important;
+}
+
+.boton {
+    width: 100%;
+    text-align: center;
+}
+
+.registro {
+    background-color: rgb(147, 222, 255);
+    color: rgb(34, 40, 49);
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 50%;
+    border-radius: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(247, 247, 247);
+    font-size: 12px;
+}
+
+.ng-touched.ng-invalid:is(label),
+.ng-dirty.ng-invalid:is(label) {
+    border: 2px solid red;
+}
+
+.error {
+    color: brown;
+    font-size: 12px;
+    margin-left: 14px;
+    margin-top: -5px;
+}
+
+::placeholder { color: blue; }
+
+span .mat-select-placeholder .mat-select-min-line .ng-tns-c122-1 .ng-star-inserted {
+    color: aqua;
+}
+
+.cdk-overlay-origin {
+    color: red;
+}
+
+/*.contenedor-btn-file input {
+    appearance: none;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.contenedor-btn-file {
+    display: inline-block;
+    position: relative;
+    background-color: rgb(147, 222, 255);
+    color: white;
+    border: 0;
+    padding: 0px 0px;
+    border-radius: 30px;
+    width: 100%;
+    height: 30px;
+}
+
+.contenedor-btn-file label {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-top: -7px;
+}*/
+
+.file .upload {
+    background-color: transparent;
+    border-radius: 70px;
+    width: 95%;
+    height: 35px;
+    color: white;
+    font-size: 14px;
+}
+
+::-webkit-file-upload-button {
+    color: rgb(34, 40, 49);
+    background-color: rgb(147, 222, 255);
+    border: none;
+    border-radius: 50px;
+    height: 85%;
+    width: 50%;
+}
+
+.total {
+    width: 100%;
+    border: 1px solid rgb(147, 222, 255);
+    border-radius: 30px;
+    box-shadow: 3px 5px rgba(23, 27, 34, 0.178);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.644);
+}
+
+.infoRegis {
+    text-align: center;
+}
+
+.titSeccion {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+#titSeccionDere {
+    text-align: right;
+}

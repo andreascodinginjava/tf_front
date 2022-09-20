@@ -1,0 +1,98 @@
+<form [formGroup]="clienteForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Numero de identificacion" formControlName="dni">
+            <mat-error *ngIf="clienteForm.controls['dni'].hasError('required')">
+              Numero de identificacion es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombres" formControlName="name">
+            <mat-error *ngIf="clienteForm.controls['name'].hasError('required')">
+              Nombres son <strong>requeridos</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Apellidos" formControlName="lastName">
+            <mat-error *ngIf="clienteForm.controls['lastName'].hasError('required')">
+              Apellidos son <strong>requeridos</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Correo Electronico" formControlName="email">
+            <mat-error *ngIf="clienteForm.controls['email'].hasError('required')">
+              Correo electronico es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Clave" formControlName="clave">
+            <mat-error *ngIf="clienteForm.controls['clave'].hasError('required')">
+              Clave es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Repite la clave" formControlName="clave2">
+            <mat-error *ngIf="clienteForm.controls['clave2'].hasError('required')">
+              Repite la clave es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Ciudad" formControlName="ciudad">
+              <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.abbreviation">
+                {{ ciudad.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="clienteForm.controls['ciudad'].hasError('required')">
+              Ciudad es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Genero" formControlName="genero">
+              <mat-option *ngFor="let genero of generos" [value]="genero.abbreviation">
+                {{ genero.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="clienteForm.controls['genero'].hasError('required')">
+              Genero es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+

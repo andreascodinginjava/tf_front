@@ -1,0 +1,123 @@
+<div class="supercontenedor">
+    <div class="espacio"></div>
+    <div class="contenedor">
+        <div class="imagen">
+            <br><br>
+            <span>TransFlash</span>
+            <p>Transporte de mercancia en toda Bogota</p>
+        </div>
+        <div class="formulario">
+            <app-seccion-titulo titulo="Registro"></app-seccion-titulo>
+            <form [formGroup]="clienteForm" novalidate (ngSubmit)="onSubmit()">
+                <!--Numero de identificacion-->
+                <div class="error"
+                    *ngIf="clienteForm.controls['dni'].invalid && (clienteForm.controls['dni'].touched || clienteForm.controls['dni'].dirty)">
+                    <mat-error *ngIf="clienteForm.controls['dni'].hasError('required')">
+                        * Numero de identificacion es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Numero de identificacion</span><br>
+                    <input type="number" formControlName="dni" autocomplete="off">
+                </div>
+                <!--Nombres-->
+                <div class="error"
+                    *ngIf="clienteForm.controls['name'].invalid && (clienteForm.controls['name'].touched || clienteForm.controls['name'].dirty)">
+                    <mat-error *ngIf="clienteForm.controls['name'].hasError('required')">
+                        * Nombres es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Nombres</span><br>
+                    <input type="text" formControlName="name" autocomplete="off">
+                </div>
+                <!--Apellidos-->
+                <div class="error"
+                    *ngIf="clienteForm.controls['lastName'].invalid && (clienteForm.controls['lastName'].touched || clienteForm.controls['lastName'].dirty)">
+                    <mat-error *ngIf="clienteForm.controls['lastName'].hasError('required')">
+                        * Apellidos es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Apellidos</span><br>
+                    <input type="text" formControlName="lastName" autocomplete="off">
+                </div>
+                <!--Correo electronico-->
+                <div class="error"
+                    *ngIf="clienteForm.controls['email'].invalid && (clienteForm.controls['email'].touched || clienteForm.controls['email'].dirty)">
+                    <mat-error *ngIf="clienteForm.controls['email'].hasError('required')">
+                        * Correo electronico es requerido
+                    </mat-error>
+                    <mat-error *ngIf="clienteForm.controls['email'].hasError('email')">
+                        * No es un correo electronico
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Correo electronico</span><br>
+                    <input type="email" formControlName="email" autocomplete="off">
+                </div>
+                <!--Clave-->
+                <div class="error"
+                    *ngIf="clienteForm.controls['clave'].invalid && (clienteForm.controls['clave'].touched || clienteForm.controls['clave'].dirty)">
+                    <mat-error *ngIf="clienteForm.controls['clave'].hasError('required')">
+                        * Contrasena es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Contrasena</span><br>
+                    <input type="password" formControlName="clave" autocomplete="off">
+                </div>
+                <!--Repetir clave-->
+                <div class="error"
+                    *ngIf="clienteForm.controls['clave2'].invalid && (clienteForm.controls['clave2'].touched || clienteForm.controls['clave2'].dirty)">
+                    <mat-error *ngIf="clienteForm.controls['clave2'].hasError('required')">
+                        * Confirmar contrasena es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Confirmar contrasena</span><br>
+                    <input type="password" formControlName="clave2" autocomplete="off">
+                </div>
+                <!--Ciudad-->
+                <div class="error"
+                    *ngIf="clienteForm.controls['ciudad'].invalid && (clienteForm.controls['ciudad'].touched || clienteForm.controls['ciudad'].dirty)">
+                    <mat-error *ngIf="clienteForm.controls['ciudad'].hasError('required')">
+                        * Ciudad es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Ciudad de residencia</span><br>
+                    <mat-select placeholder="Ciudad" formControlName="ciudad">
+                        <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.abbreviation">
+                            {{ ciudad.name }}
+                        </mat-option>
+                    </mat-select>
+                </div>
+                <!--Genero-->
+                <div class="error"
+                    *ngIf="clienteForm.controls['genero'] && (clienteForm.controls['genero'].touched || clienteForm.controls['genero'].dirty)">
+                    <mat-error *ngIf="clienteForm.controls['genero'].hasError('required')">
+                        * Genero es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Genero</span><br>
+                    <mat-select placeholder="Genero" formControlName="genero">
+                        <mat-option *ngFor="let genero of generos" [value]="genero.abbreviation">
+                            {{ genero.name }}
+                        </mat-option>
+                    </mat-select>
+                </div>
+                <!--Boton-->
+                <div class="boton">
+                    <button><strong>Registrarme</strong></button><br>
+                    <a href="">Cambiar tipo de usuario</a><br>
+                </div>
+                <br>
+                <a href="">Volver</a>
+                <br><br>
+            </form>
+            <a href="../transflash/transflash.component.html"></a>
+        </div>
+    </div>
+</div>

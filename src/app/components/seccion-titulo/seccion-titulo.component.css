@@ -1,0 +1,18 @@
+.titulo {
+    background-color: rgb(147, 222, 255);
+    height: 50px;
+    width: 30%;
+    margin: auto;
+    margin-right: 0;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    text-align: left;
+}
+
+.titulo span {
+    color: rgb(34, 40, 49);
+    font-size: 25px;
+    margin-top: 25px;
+    margin-left: 20px;
+    line-height: 50px;
+}

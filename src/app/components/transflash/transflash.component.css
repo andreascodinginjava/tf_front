@@ -1,0 +1,184 @@
+.contenedor {
+    display: flex;
+    background-color: rgb(34, 40, 49);
+    text-align: center;
+    height: 60px;
+}
+
+.titulo {
+    width: 80%;
+    color: rgb(247, 247, 247);
+    margin-top: 20px;
+    font-size: 35px;
+}
+
+.botones {
+    width: auto;
+    margin-top: 15px;
+}
+
+.botones a {
+    width: 50%;
+    margin: 20px;
+    color: rgb(147, 222, 255);
+    text-decoration: none;
+}
+
+.carrusel {
+    background-color: rgb(34, 40, 49);
+}
+
+.sobreNosotros {
+    background-color: rgb(238, 238, 238);
+}
+
+.contacto {
+    background-color: rgb(217, 217, 217);
+}
+
+footer {
+    background-color: rgb(34, 40, 49);
+    color: rgb(247, 247, 247);
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+
+.contenido {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+
+.tituloSB {
+    background-color: rgb(50, 54, 67);
+    height: 50px;
+    width: 30%;
+    margin: auto;
+    margin-left: 0;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+    text-align: right;
+}
+
+.tituloSB span {
+    color: rgb(238, 238, 238);
+    font-size: 25px;
+    margin-top: 25px;
+    margin-right: 20px;
+    line-height: 45px;
+}
+
+.tituloC {
+    background-color: rgb(50, 54, 67);
+    height: 50px;
+    width: 30%;
+    margin: auto;
+    margin-right: 0;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    text-align: left;
+}
+
+.tituloC span {
+    color: rgb(238, 238, 238);
+    font-size: 25px;
+    margin-top: 25px;
+    margin-left: 20px;
+    line-height: 45px;
+}
+
+form {
+    width: 70%;
+    margin: auto;
+}
+
+.campo {
+    border: 1px solid rgb(96, 100, 112);
+    margin-bottom: 10px;
+    border-radius: 30px;
+    box-shadow: 3px 5px rgba(23, 27, 34, 0.178);
+}
+
+.campo input {
+    background: none;
+    width: 90%;
+    border: none;
+    outline: none;
+    margin-left: 14px;
+    color: white;
+    font-size: 14px;
+}
+
+.campo span {
+    margin: 15px;
+    color: rgb(142, 144, 151);
+    font-size: 12px;
+    text-align: left;
+}
+
+.form-control-log:focus {
+    background: none;
+}
+
+.mat-select {
+    width: 90%;
+    margin-left: 14px;
+    color: white !important;
+}
+
+.boton {
+    width: 100%;
+    text-align: center;
+}
+
+.registro {
+    background-color: rgb(147, 222, 255);
+    color: rgb(34, 40, 49);
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 50%;
+    border-radius: 50px;
+}
+
+
+.ng-touched.ng-invalid:is(label),
+.ng-dirty.ng-invalid:is(label) {
+    border: 2px solid red;
+}
+
+.error {
+    color: brown;
+    font-size: 12px;
+    margin-left: 14px;
+    margin-top: -5px;
+}
+
+::placeholder { color: blue; }
+
+span .mat-select-placeholder .mat-select-min-line .ng-tns-c122-1 .ng-star-inserted {
+    color: aqua;
+}
+
+.cdk-overlay-origin {
+    color: red;
+}
+
+.text {
+    width: 95%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent
+}
+
+.infoRegis {
+    margin-top: 10px;
+    text-align: center;
+}
