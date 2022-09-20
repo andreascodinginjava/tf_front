@@ -1,0 +1,26 @@
+<app-seccion-titulo titulo="Cliente"></app-seccion-titulo>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre(s) y apellido(s)</th>
+        <th scope="col">DNI</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Correo electronico</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Genero</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let cliente of clientes; let item=index"> 
+      <tr>
+        <th scope="row">{{item+1}}</th>
+        <td>{{cliente.nombre+' '+cliente.apellido}}</td>
+        <td>{{cliente.dni}}</td>
+        <td>{{cliente.estado}}</td>
+        <td>{{cliente.email}}</td>
+        <td *ngIf="cliente.ciudad==1">Bogota</td>  
+        <td *ngIf="cliente.genero==1">Femenino</td>
+        <td *ngIf="cliente.genero==2">Masculino</td>
+      </tr>
+    </tbody>
+  </table>

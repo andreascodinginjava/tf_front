@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActivarUsuarioComponent } from './components/activar-usuario/activar-usuario.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ListaClientesComponent } from './components/lista-clientes/lista-clientes.component';
+import { ListaConductoresComponent } from './components/lista-conductores/lista-conductores.component';
 import { LoginComponent } from './components/login/login.component';
 import { SeccionCalificacionComponent } from './components/seccion-calificacion/seccion-calificacion.component';
 import { SeccionHistorialComponent } from './components/seccion-historial/seccion-historial.component';
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'SignupConductor', component: SignupConductorComponent },
   { path: 'Trasnflash', component: TransflashComponent },
   { path: 'ActivarUsuario', component: ActivarUsuarioComponent },
+  { path: 'ListaCliente', component: ListaClientesComponent },
+  { path: 'ListaConductor', component: ListaConductoresComponent },
 ];
 
 @NgModule({

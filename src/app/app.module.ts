@@ -38,6 +38,9 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { ClienteFormComponent } from './components/cliente-form/cliente-form.component';
 import { ActivarUsuarioComponent } from './components/activar-usuario/activar-usuario.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ListaClientesComponent } from './components/lista-clientes/lista-clientes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ListaConductoresComponent } from './components/lista-conductores/lista-conductores.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,8 @@ import { NgChartsModule } from 'ng2-charts';
     LoginFormComponent,
     ClienteFormComponent,
     ActivarUsuarioComponent,
+    ListaClientesComponent,
+    ListaConductoresComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +85,8 @@ import { NgChartsModule } from 'ng2-charts';
     MatSelectModule,
     MatRadioModule,
     ReactiveFormsModule,
-    NgChartsModule
+    NgChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
