@@ -1,1 +1,30 @@
-<p>lista-conductores works!</p>
+<app-seccion-titulo titulo="Conductor"></app-seccion-titulo>
+<br>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre(s) y apellido(s)</th>
+        <th scope="col">DNI</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Correo electronico</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Placa del vehiculo</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let conductor of conductores; let item=index"> 
+      <tr>
+        <th scope="row">{{item+1}}</th>
+        <td>{{conductor.nombreConductor+' '+conductor.apellidoConductor}}</td>
+        <td>{{conductor.idConductor}}</td>
+        <td>{{conductor.estadoConductor}}</td>
+        <td>{{conductor.emailConductor}}</td>
+        <td *ngIf="conductor.ciudadConductorFk==1">Bogota</td>  
+        <td *ngIf="conductor.generoConductorFk==1">Femenino</td>
+        <td *ngIf="conductor.generoConductorFk==2">Masculino</td>
+        <td>{{conductor.vehiculoFk}}</td>
+      </tr>
+    </tbody>
+  </table>
+

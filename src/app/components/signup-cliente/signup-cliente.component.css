@@ -15,10 +15,10 @@
 }
 
 .imagen {
-    background-image: url('C:\Users\User\Documents\Proyecto\tf_front\src\assets\images\rc.jpg');
+    /*background-image: url('C:\Users\User\Documents\Proyecto\tf_front\src\assets\images\rc.jpg');
     background-position: center;
 	background-attachment: contain;
-	background-size: cover;
+	background-size: cover;*/
     opacity: 40%;
     width: 30%;
     border-top-left-radius: 20px;

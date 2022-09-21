@@ -1,64 +1,48 @@
-import { Component } from '@angular/core';
-import { ClienteService } from 'src/app/services/cliente/cliente.service';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-lista-clientes',
   templateUrl: './lista-clientes.component.html',
   styleUrls: ['./lista-clientes.component.css']
 })
-export class ListaClientesComponent {
+export class ListaClientesComponent implements OnInit {
   public clientes: Array<any> = [];
+  public controller = 'Cliente';
 
-  constructor(
-    private clienteService: ClienteService
-  ) {
-    //this.clienteService.getClientes().subscribe((resp: any) => {
-    interface client {
-      nombre: String,
-      apellido: String,
-      dni: String,
-      estado: String,
-      email: String,
-      ciudad: Number,
-      genero: Number
-    }
+  /*constructor(private clienteService: ClienteService) {
 
-    const client1: client = {
-      nombre: "Liliana",
-      apellido: "Agudelo",
-      dni: '1234',
-      estado: 'Activo',
-      email: "lili@correo.com",
-      ciudad: 1,
-      genero: 1
-    }
+  }
 
-    const client2: client = {
-      nombre: "Camila",
-      apellido: "Cabello",
-      dni: '5678',
-      estado: 'Activo',
-      email: "camila@correo.com",
-      ciudad: 1,
-      genero: 1
-    }
+  ngOnInit(): void {
+    this.clienteService.getClientes();
+  }*/
 
-    const client3: client = {
-      nombre: "Andres",
-      apellido: "Calamardo",
-      dni: '9123',
-      estado: 'Inactivo',
-      email: "andres@correo.com",
-      ciudad: 1,
-      genero: 2
-    }
+  constructor(private service: ApiService) {
 
-    this.clientes.push(client1);
-    this.clientes.push(client2);
-    this.clientes.push(client3);
+  }
 
-    console.log(this.clientes);
+  ngOnInit(): void {
 
-    //this.clientes = resp
+    this.service.getAll(this.controller).subscribe((resp:any) => {
+      console.log(resp);
+      this.clientes = resp;
+    })
+
+    /*this.service.getById(this.controller, '1001329488').subscribe((resp) => {
+      console.log(resp);
+    })
+
+    this.service.create(this.controller, {nombre:'hola'}).subscribe((resp) => {
+      console.log(resp);
+    })
+
+    this.service.update(this.controller, '1001329488', {nombre:'hola'}).subscribe((resp) => {
+      console.log(resp);
+    })
+
+    this.service.delete(this.controller, '1001329488').subscribe((resp) => {
+      console.log(resp);
+    })*/
   }
 }

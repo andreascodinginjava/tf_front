@@ -1,4 +1,5 @@
 <app-seccion-titulo titulo="Cliente"></app-seccion-titulo>
+<br>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -14,13 +15,13 @@
     <tbody *ngFor="let cliente of clientes; let item=index"> 
       <tr>
         <th scope="row">{{item+1}}</th>
-        <td>{{cliente.nombre+' '+cliente.apellido}}</td>
-        <td>{{cliente.dni}}</td>
-        <td>{{cliente.estado}}</td>
-        <td>{{cliente.email}}</td>
-        <td *ngIf="cliente.ciudad==1">Bogota</td>  
-        <td *ngIf="cliente.genero==1">Femenino</td>
-        <td *ngIf="cliente.genero==2">Masculino</td>
+        <td>{{cliente.nombreCliente+' '+cliente.apellidoCliente}}</td>
+        <td>{{cliente.idCliente}}</td>
+        <td>{{cliente.estadoCliente}}</td>
+        <td>{{cliente.emailCliente}}</td>
+        <td *ngIf="cliente.ciudadClienteFk==1">Bogota</td>  
+        <td *ngIf="cliente.generoClienteFk==1">Femenino</td>
+        <td *ngIf="cliente.generoClienteFk==2">Masculino</td>
       </tr>
     </tbody>
   </table>

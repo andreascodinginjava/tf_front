@@ -14,10 +14,10 @@
 }
 
 .titulo {
-    background-image: url('C:\Users\User\Documents\Proyecto\tf_front\src\assets\images\registroCliente.jpg');
+    /*background-image: url('C:\Users\User\Documents\Proyecto\tf_front\src\assets\images\registroCliente.jpg');
     background-position: center;
 	background-attachment: contain;
-	background-size: cover;
+	background-size: cover;*/
     opacity: 40%;
     height: 120px;
     border-top-left-radius: 20px;
