@@ -1,1 +1,45 @@
 <app-seccion-titulo titulo="Calificacion"></app-seccion-titulo>
+<br>
+<div class="contenedor">
+    <br>
+    <div class="barra">
+        <mat-card class="reco">
+            <mat-card-content>
+                <mat-card-title>{{calificacion.recomendaciones}} %</mat-card-title>
+                <span>Recomendaciones</span>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="total">
+            <mat-card-content>
+                <mat-card-title>{{calificacion.total}} COP</mat-card-title>
+                <span>Total vendido</span>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="servicio">
+            <mat-card-content>
+                <mat-card-title>{{calificacion.servicios}}</mat-card-title>
+                <span>Servicios realizados</span>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="estrellas">
+            <mat-card-content>
+                <mat-card-title>{{calificacion.estrellas}}</mat-card-title>
+                <span>Cantidad de estrellas</span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <br>
+</div>
+<br>
+<div class="comentarios">
+    <!--*cdkVirtualFor="let comentario of calificacion.comentario"-->
+    <mat-card class="coment">
+        <mat-card-header>
+            <mat-card-title>Samantha Soto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <span>{{calificacion.comentario}}</span>
+        </mat-card-content>
+    </mat-card>
+</div>
+<br>

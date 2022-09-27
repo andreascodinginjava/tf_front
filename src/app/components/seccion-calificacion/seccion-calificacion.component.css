@@ -1,0 +1,51 @@
+.contenedor {
+    background-color: rgb(50, 54, 67);
+}
+
+.barra {
+    background-color: transparent;
+    display: flex;
+}
+
+.reco, .total, .servicio, .estrellas {
+    width: 25%;
+    border: none;
+    outline: none;
+    margin: auto;
+    box-shadow: none;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.reco, .total, .servicio {
+    border-right: 1px solid rgba(255, 255, 255, 0.281);
+}
+
+.contenedor .mat-card-title{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+.contenedor .mat-card-content span {
+    color: rgba(255, 255, 255, 0.616);
+    font-size: 16px;
+}
+
+.comentarios .mat-card-title {
+    color: rgb(147, 222, 255);
+    font-size: 25px;
+}
+
+.coment {
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 3px 3px rgba(128, 128, 128, 0.267);
+    margin-bottom: 15px;
+}
+
+.coment .mat-card-content span {
+    margin-left: 20px;
+}
