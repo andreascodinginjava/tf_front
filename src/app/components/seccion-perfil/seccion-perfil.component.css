@@ -1,0 +1,64 @@
+.mat-card {
+    background-color: transparent;
+    color: white;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    width: 80%;
+    margin: auto;
+}
+
+.mat-card-title {
+    color: rgb(147, 222, 255);
+    font-weight: normal;
+    font-size: 35px;
+}
+
+.mat-card-content {
+    margin-left: 20px;
+}
+
+.personal {
+    background-color: rgb(50, 54, 67);
+    width: 50%;
+    margin: auto;
+    margin-right: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-bottom-left-radius: 200px;
+    border-top-left-radius: 200px;
+}
+
+.personal span, .vehiculo span, .informacion span {
+    font-size: 20px;
+}
+
+.vehiculo {
+    background-color: rgb(50, 54, 67);
+    width: 50%;
+    margin: auto;
+    margin-left: 0px;
+    border-bottom-right-radius: 200px;
+    border-top-right-radius: 200px;
+}
+
+.espacio {
+    height: 70px;
+}
+
+.difuminado {
+    color: rgba(255, 255, 255, 0.623);
+    margin-left: 20px;
+    font-size: 22px;
+}
+
+/*Cliente*/
+.informacion {
+    background-color: rgb(50, 54, 67);
+    width: 60%;
+    margin: auto;
+    margin-left: 0%;
+    margin-top: 100px;
+    border-bottom-right-radius: 200px;
+    border-top-right-radius: 200px;
+}

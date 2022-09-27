@@ -1,1 +1,75 @@
 <app-seccion-titulo titulo="Perfil"></app-seccion-titulo>
+<br>
+<div class="contenedor" *ngIf="perfilCLiente==false">
+    <div class="personal">
+        <div class="espacio"></div>
+        <mat-card class="servicio-card">
+            <mat-card-header>
+                <mat-card-title>Informacion personal</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <br>
+                <span>Nombre: {{conductor.nombre}}</span><br>
+                <span>Apellido(s): {{conductor.apellido}}</span><br>
+                <span>DNI: {{conductor.dni}}</span><br>
+                <span>Correo electronico: {{conductor.email}}</span><br>
+                <span>Ciudad residencia: {{conductor.ciudad}}</span><br>
+                <span>Genero: {{conductor.genero}}</span><br>
+            </mat-card-content>
+        </mat-card>
+        <div class="espacio"></div>
+    </div>
+    <div class="vehiculo">
+        <div class="espacio"></div>
+        <mat-card class="servicio-card">
+            <mat-card-header>
+                <mat-card-title>Informacion del vehiculo</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <br>
+                <div class="contenido">
+                    <div class="datos">
+                        <span>Placa del vehiculo: {{conductor.vehiculo.placa}}</span><br>
+                        <span>Capacidad: {{conductor.vehiculo.capacidad}}</span><br>
+                        <span>Color del vehiculo: {{conductor.vehiculo.color}}</span><br>
+                        <span>Tipo de vehiculo: {{conductor.vehiculo.tipoVehiculo}}</span><br>
+                    </div>
+                    <div class="imagen">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <div class="espacio"></div>
+    </div>
+    <br><br>
+</div>
+
+<div class="contenedor" *ngIf="perfilCLiente==true">
+    <div class="informacion">
+        <div class="espacio"></div>
+        <mat-card class="servicio-card">
+            <mat-card-header>
+                <mat-card-title>Informacion personal</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <br>
+                <div class="contenido">
+                    <div class="datos">
+                        <span>Nombre: {{cliente.nombre}}</span><br>
+                        <span>Apellido: {{cliente.apellido}}</span><br>
+                        <span>DNI: {{cliente.dni}}</span><br>
+                        <span>Correo electronico: {{cliente.email}}</span><br>
+                        <span>Ciudad residencia: {{cliente.ciudad}}</span><br>
+                        <span>Genero: {{cliente.genero}}</span><br>
+                    </div>
+                    <div class="imagen">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <div class="espacio"></div>
+    </div>
+    <br><br>
+</div>

@@ -1,0 +1,194 @@
+.contenedor {
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.espacio {
+    height: 90px;
+}
+
+.espacio2 {
+    height: 163px;
+}
+
+.crearServicio, .listaServicio {
+    width: 50%;
+}
+
+.formulario {
+    margin: 50px;
+    margin-left: 0px;
+    background-color: rgb(50, 54, 67);
+    border-bottom-right-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+.titulo {
+    width: 90%;
+    margin: auto;
+    text-align: right;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: 30px;
+    color: rgb(0, 146, 202);
+}
+
+.titulo2 {
+    width: 70%;
+    margin: auto;
+    text-align: left;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: 35px;
+    color: rgb(147, 222, 255);
+}
+
+.servicio {
+    width: 90%;
+    margin: auto;
+}
+
+.servicio-card {
+    border-radius: 20px;
+    box-shadow: 3px 3px rgba(128, 128, 128, 0.267);
+    margin-bottom: 15px;
+}
+
+.mat-card-title {
+    color: rgb(0, 146, 202);
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.contenido {
+    margin-top: 10px;
+    display: flex;
+}
+
+.datos, .direccion {
+    width: 50%;
+}
+
+.datos span, .direccion span {
+    margin-left: 20px;
+}
+
+/*Formulario*/
+form {
+    width: 70%;
+    margin: auto;
+}
+
+.campo {
+    border: 1px solid rgb(96, 100, 112);
+    margin-bottom: 20px;
+    border-radius: 30px;
+    box-shadow: 3px 5px rgba(23, 27, 34, 0.178);
+}
+
+.campo input {
+    background: none;
+    width: 90%;
+    border: none;
+    outline: none;
+    margin-left: 14px;
+    color: white;
+    font-size: 14px;
+}
+
+.campo span {
+    margin: 15px;
+    color: rgb(142, 144, 151);
+    font-size: 12px;
+}
+
+.form-control-log:focus {
+    background: none;
+}
+
+.mat-select {
+    width: 90%;
+    margin-left: 14px;
+    color: white !important;
+}
+
+::ng-deep .mat-select-content {
+    color: blueviolet !important;
+}
+
+.boton {
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(147, 222, 255);
+    color: rgb(34, 40, 49);
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 50%;
+    border-radius: 50px;
+}
+
+.ng-touched.ng-invalid:is(label),
+.ng-dirty.ng-invalid:is(label) {
+    border: 2px solid red;
+}
+
+.error {
+    color: brown;
+    font-size: 12px;
+    margin-left: 14px;
+    margin-top: -5px;
+}
+
+/*Conductor*/
+.servicioPublicado {
+    width: 70%;
+}
+
+.publicados {
+    width: 90%;
+    margin: auto;
+}
+
+.servicioP-card {
+    border-radius: 20px;
+    box-shadow: 3px 3px rgba(128, 128, 128, 0.267);
+}
+
+.imagen {
+    width: 30%;
+}
+
+.side {
+    width: 70%;
+    height: 500px;
+    margin: auto;
+    margin-right: 0px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    opacity: 50%;
+}
+
+.titulo3 {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: 35px;
+    color: rgb(0, 146, 202);
+}
+
+.example-viewport {
+    height: 650px;
+    width: 100%;
+}

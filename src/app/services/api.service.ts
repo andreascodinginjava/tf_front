@@ -22,11 +22,11 @@ export class ApiService {
   }
 
   create(controller:string, body:any) {
-    return this.http.post(body, this._url+controller);
+    return this.http.post(this._url+controller, body);
   }
 
   update(controller:string, id:string, body:any) {
-    return this.http.put(body, this._url+controller+'/'+id)
+    return this.http.put(this._url+controller+'/'+id, body)
   }
 
   delete(controller:string, id:string) {

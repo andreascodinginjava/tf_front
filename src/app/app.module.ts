@@ -24,7 +24,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -34,13 +33,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginFormComponent } from './components/login-form/login-form.component';
 import { ClienteFormComponent } from './components/cliente-form/cliente-form.component';
 import { ActivarUsuarioComponent } from './components/activar-usuario/activar-usuario.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ListaClientesComponent } from './components/lista-clientes/lista-clientes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListaConductoresComponent } from './components/lista-conductores/lista-conductores.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +59,6 @@ import { ListaConductoresComponent } from './components/lista-conductores/lista-
     TableComponent,
     SeccionTituloComponent,
     CarruselComponent,
-    LoginFormComponent,
     ClienteFormComponent,
     ActivarUsuarioComponent,
     ListaClientesComponent,
@@ -86,7 +85,8 @@ import { ListaConductoresComponent } from './components/lista-conductores/lista-
     MatRadioModule,
     ReactiveFormsModule,
     NgChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,62 @@
-<p>login works!</p>
+<div class="supercontenedor">
+    <div class="espacio"></div>
+    <div class="espacio"></div>
+    <div class="contenedor">
+        <div class="imagen">
+            <br><br>
+            <span>TransFlash</span>
+            <p>Transporte de mercancia en toda Bogota</p>
+        </div>
+        <div class="formulario">
+            <app-seccion-titulo titulo="Registro"></app-seccion-titulo>
+            <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+                <!--Numero de identificacion-->
+                <div class="error"
+                    *ngIf="loginForm.controls['dni'].invalid && (loginForm.controls['dni'].touched || loginForm.controls['dni'].dirty)">
+                    <mat-error *ngIf="loginForm.controls['dni'].hasError('required')">
+                        * Numero de identificacion es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Numero de identificacion</span><br>
+                    <input type="number" formControlName="dni" autocomplete="off">
+                </div>
+                <!--Clave-->
+                <div class="error"
+                    *ngIf="loginForm.controls['clave'].invalid && (loginForm.controls['clave'].touched || loginForm.controls['clave'].dirty)">
+                    <mat-error *ngIf="loginForm.controls['clave'].hasError('required')">
+                        * Contrasena es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Contrasena</span><br>
+                    <input type="password" formControlName="clave" autocomplete="off">
+                </div>
+                <!--Tipo usuario-->
+                <div class="error"
+                    *ngIf="loginForm.controls['tipo'] && (loginForm.controls['tipo'].touched || loginForm.controls['tipo'].dirty)">
+                    <mat-error *ngIf="loginForm.controls['tipo'].hasError('required')">
+                        * Tipo de usuario es requerido
+                    </mat-error>
+                </div>
+                <div class="campo">
+                    <span>Tipo de usuario</span><br>
+                    <mat-select placeholder="tipo" formControlName="tipo">
+                        <mat-option *ngFor="let tipoCliente of tiposClientes" [value]="tipoCliente.abbreviation">
+                            {{ tipoCliente.name }}
+                        </mat-option>
+                    </mat-select>
+                </div>
+                <!--Boton-->
+                <div class="boton">
+                    <button><strong>Registrarme</strong></button><br>
+                    <a href="">Cambiar tipo de usuario</a><br>
+                </div>
+                <br>
+                <a href="">Volver</a>
+                <br><br>
+            </form>
+            <a href="../transflash/transflash.component.html"></a>
+        </div>
+    </div>
+  </div>
