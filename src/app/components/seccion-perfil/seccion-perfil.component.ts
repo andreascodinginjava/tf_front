@@ -60,77 +60,33 @@ export class SeccionPerfilComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.perfilCLiente) {
-      this.service.getById('Cliente', '51878701').subscribe((resp:any) => {
+      this.service.getById('Cliente/Profile', '1001329488').subscribe((resp:any) => {
         console.log(resp);
 
-        this.cliente.nombre = resp.nombreCliente;
-        this.cliente.apellido = resp.apellidoCliente;
-        this.cliente.dni = resp.idCliente;
-        this.cliente.email = resp.emailCliente;
-
-        if (resp.ciudadClienteFk == 1) {
-          this.cliente.ciudad = 'Bogota DC'
-        }
-
-        if (resp.generoClienteFk == 1) {
-          this.cliente.genero = 'Femenino'
-        }
-
-        if (resp.generoClienteFk == 2) {
-          this.cliente.genero = 'Masculino'
-        }
-
-        if (resp.generoClienteFk == 3) {
-          this.cliente.genero = 'Otro'
-        }
-
+        this.cliente.nombre = resp[0].nombreCliente;
+        this.cliente.apellido = resp[0].apellidoCliente;
+        this.cliente.dni = resp[0].idCliente;
+        this.cliente.email = resp[0].emailCliente;
+        this.cliente.ciudad = resp[0].ciudadCliente;
+        this.cliente.genero = resp[0].generoCliente;
+        
         console.log(this.cliente);
       })
 
     } else {
-
-      this.service.getById('Conductor', '123456789').subscribe((resp:any) => {
+      this.service.getById('Conductor/Profile', '123456789').subscribe((resp:any) => {
         console.log(resp);
 
-        this.conductor.nombre = resp.nombreConductor;
-        this.conductor.apellido = resp.apellidoConductor;
-        this.conductor.dni = resp.idConductor;
-        this.conductor.email = resp.emailConductor;
-        this.conductor.vehiculo.placa = resp.vehiculoFk;
-
-        if (resp.ciudadConductorFk == 1) {
-          this.conductor.ciudad = 'Bogota DC'
-        }
-
-        if (resp.generoConductorFk == 1) {
-          this.conductor.genero = 'Femenino'
-        }
-
-        if (resp.generoConductorFk == 2) {
-          this.conductor.genero = 'Masculino'
-        }
-
-        if (resp.generoConductorFk == 3) {
-          this.conductor.genero = 'Otro'
-        }
-
-        this.service.getById('Vehiculo', this.conductor.vehiculo.placa).subscribe((resp:any) => {
-          console.log(resp);
-
-          this.conductor.vehiculo.capacidad = resp.capacidad;
-          this.conductor.vehiculo.color = resp.colorVehiculoFk;
-          this.conductor.vehiculo.tipoVehiculo = resp.tipoVehiculoFk;
-
-          this.service.getById('Color', this.conductor.vehiculo.color).subscribe((resp:any) => {
-            console.log(resp);
-            this.conductor.vehiculo.color = resp.color1;
-          })
-
-          this.service.getById('TipoVehiculo', this.conductor.vehiculo.tipoVehiculo).subscribe((resp:any) => {
-            console.log(resp);
-            this.conductor.vehiculo.tipoVehiculo = resp.tipoVehiculo1;
-          })
-        })
+        this.conductor.nombre = resp[0].nombreConductor;
+        this.conductor.apellido = resp[0].apellidoConductor;
+        this.conductor.dni = resp[0].idConductor;
+        this.conductor.email = resp[0].emailConductor;
+        this.conductor.ciudad = resp[0].ciudadConductor;
+        this.conductor.genero = resp[0].generoConductor;
+        this.conductor.vehiculo.capacidad = resp[0].capacidadVehiculo;
+        this.conductor.vehiculo.color = resp[0].colorVehiculo;
+        this.conductor.vehiculo.placa = resp[0].placaVehiculo;
+        this.conductor.vehiculo.tipoVehiculo = resp[0].tipoVehiculo1;
 
         console.log(this.conductor);
       })

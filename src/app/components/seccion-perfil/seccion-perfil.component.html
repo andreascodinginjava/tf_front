@@ -1,75 +1,105 @@
 <app-seccion-titulo titulo="Perfil"></app-seccion-titulo>
 <br>
-<div class="contenedor" *ngIf="perfilCLiente==false">
-    <div class="personal">
-        <div class="espacio"></div>
-        <mat-card class="servicio-card">
-            <mat-card-header>
-                <mat-card-title>Informacion personal</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <br>
-                <span>Nombre: {{conductor.nombre}}</span><br>
-                <span>Apellido(s): {{conductor.apellido}}</span><br>
-                <span>DNI: {{conductor.dni}}</span><br>
-                <span>Correo electronico: {{conductor.email}}</span><br>
-                <span>Ciudad residencia: {{conductor.ciudad}}</span><br>
-                <span>Genero: {{conductor.genero}}</span><br>
-            </mat-card-content>
-        </mat-card>
-        <div class="espacio"></div>
-    </div>
-    <div class="vehiculo">
-        <div class="espacio"></div>
-        <mat-card class="servicio-card">
-            <mat-card-header>
-                <mat-card-title>Informacion del vehiculo</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <br>
-                <div class="contenido">
-                    <div class="datos">
-                        <span>Placa del vehiculo: {{conductor.vehiculo.placa}}</span><br>
-                        <span>Capacidad: {{conductor.vehiculo.capacidad}}</span><br>
-                        <span>Color del vehiculo: {{conductor.vehiculo.color}}</span><br>
-                        <span>Tipo de vehiculo: {{conductor.vehiculo.tipoVehiculo}}</span><br>
-                    </div>
-                    <div class="imagen">
-                        <img src="" alt="">
-                    </div>
+<div class="espacio"></div>
+<mat-card class="contenedorConductor" *ngIf="perfilCLiente==false">
+    <mat-card-content>
+        <div class="conductor">
+            <div class="personal">
+                <div class="titulo">
+                    <span>Informacion personal</span><br>
                 </div>
-            </mat-card-content>
-        </mat-card>
-        <div class="espacio"></div>
-    </div>
-    <br><br>
-</div>
+                <div class="imagen">
+                    <img src="assets\images\perfil.png" alt="">
+                </div>
+                <div class="campo">
+                    <label class="fila">Nombre:</label>
+                    <label>{{conductor.nombre}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Apellido:</label>
+                    <label>{{conductor.apellido}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">DNI:</label>
+                    <label>{{conductor.dni}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Correo electronico:</label>
+                    <label>{{conductor.email}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Ciudad residencia:</label>
+                    <label>{{conductor.ciudad}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Genero:</label>
+                    <label>{{conductor.genero}}</label>
+                </div>
+            </div>
+            <div class="separacion"></div>
+            <div class="vehiculo">
+                <div class="titulo">
+                    <span>Informacion personal</span><br>
+                </div>
+                <div class="imagen">
+                    <img src="assets\images\carro.jpg" alt="">
+                </div>
+                <div class="campo">
+                    <label class="fila">Placa del vehiculo:</label>
+                    <label>{{conductor.vehiculo.placa}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Capacidad:</label>
+                    <label>{{conductor.vehiculo.capacidad}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Color del vehiculo:</label>
+                    <label>{{conductor.vehiculo.color}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Tipo de vehiculo:</label>
+                    <label>{{conductor.vehiculo.tipoVehiculo}}</label>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<br>
 
-<div class="contenedor" *ngIf="perfilCLiente==true">
-    <div class="informacion">
-        <div class="espacio"></div>
-        <mat-card class="servicio-card">
-            <mat-card-header>
-                <mat-card-title>Informacion personal</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <br>
-                <div class="contenido">
-                    <div class="datos">
-                        <span>Nombre: {{cliente.nombre}}</span><br>
-                        <span>Apellido: {{cliente.apellido}}</span><br>
-                        <span>DNI: {{cliente.dni}}</span><br>
-                        <span>Correo electronico: {{cliente.email}}</span><br>
-                        <span>Ciudad residencia: {{cliente.ciudad}}</span><br>
-                        <span>Genero: {{cliente.genero}}</span><br>
-                    </div>
-                    <div class="imagen">
-                        <img src="" alt="">
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-        <div class="espacio"></div>
-    </div>
-    <br><br>
-</div>
+<mat-card class="contenedorCliente" *ngIf="perfilCLiente==true">
+    <mat-card-content>
+        <div class="cliente">
+            <div class="titulo">
+                <span>Informacion personal</span><br>
+            </div>
+            <div class="imagen">
+                <img src="assets\images\perfil.png" alt="">
+            </div>
+            <div class="campo">
+                <label class="fila">Nombre:</label>
+                <label>{{cliente.nombre}}</label>
+            </div>
+            <div class="campo">
+                <label class="fila">Apellido:</label>
+                <label>{{cliente.apellido}}</label>
+            </div>
+            <div class="campo">
+                <label class="fila">DNI:</label>
+                <label>{{cliente.dni}}</label>
+            </div>
+            <div class="campo">
+                <label class="fila">Correo electronico:</label>
+                <label>{{cliente.email}}</label>
+            </div>
+            <div class="campo">
+                <label class="fila">Ciudad residencia:</label>
+                <label>{{cliente.ciudad}}</label>
+            </div>
+            <div class="campo">
+                <label class="fila">Genero:</label>
+                <label>{{cliente.genero}}</label>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<br>

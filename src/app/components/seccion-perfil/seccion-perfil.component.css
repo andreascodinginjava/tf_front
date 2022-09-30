@@ -1,64 +1,70 @@
-.mat-card {
-    background-color: transparent;
-    color: white;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    width: 80%;
+.contenedorConductor, .contenedorCliente {
+    width: 70%;
     margin: auto;
+    border-radius: 30px;
 }
 
-.mat-card-title {
-    color: rgb(147, 222, 255);
-    font-weight: normal;
-    font-size: 35px;
-}
-
-.mat-card-content {
-    margin-left: 20px;
-}
-
-.personal {
-    background-color: rgb(50, 54, 67);
+.contenedorCliente {
     width: 50%;
+}
+
+.conductor {
+    display: flex;
+    width: 100%;
+}
+
+.personal, .vehiculo {
+    width: 45%;
     margin: auto;
-    margin-right: 0px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+.separacion {
+    border-left: 1px solid rgba(96, 100, 112, 0.411);
+}
+
+.titulo {
+    font-size: 30px;
+    color: rgb(0, 146, 202);
+    text-align: center;
     margin-top: 50px;
-    margin-bottom: 50px;
-    border-bottom-left-radius: 200px;
-    border-top-left-radius: 200px;
-}
-
-.personal span, .vehiculo span, .informacion span {
-    font-size: 20px;
-}
-
-.vehiculo {
-    background-color: rgb(50, 54, 67);
-    width: 50%;
-    margin: auto;
-    margin-left: 0px;
-    border-bottom-right-radius: 200px;
-    border-top-right-radius: 200px;
 }
 
 .espacio {
-    height: 70px;
+    height: 50px;
 }
 
-.difuminado {
-    color: rgba(255, 255, 255, 0.623);
-    margin-left: 20px;
-    font-size: 22px;
+.imagen {
+    text-align: center;
 }
 
-/*Cliente*/
-.informacion {
-    background-color: rgb(50, 54, 67);
-    width: 60%;
+img {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cliente {
+    width: 90%;
     margin: auto;
-    margin-left: 0%;
-    margin-top: 100px;
-    border-bottom-right-radius: 200px;
-    border-top-right-radius: 200px;
+}
+
+.campo {
+    display: flex;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(192, 192, 192, 0.568);
+    height: 40px;
+}
+
+.campo label {
+    width: 40%;
+    margin: auto;
+}
+
+.fila {
+    font-weight: bold;
 }
