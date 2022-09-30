@@ -1,0 +1,17 @@
+.mat-elevation-z8 {
+    width: 100%;
+    margin: auto;
+}
+
+.mat-form-field, .mat-table {
+    width: 100%;
+}
+
+.mat-card {
+    width: 95%;
+    margin: auto;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}

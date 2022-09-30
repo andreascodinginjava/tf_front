@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -7,23 +10,52 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./lista-clientes.component.css']
 })
 export class ListaClientesComponent implements OnInit {
-  public clientes: Array<any> = [];
-  public controller = 'Cliente';
-  
-  constructor(private service: ApiService) {
+  dataSource: MatTableDataSource<any>;
+  displayedColumns: string[] = [];
+  public conductores: Array<any> = [];
+  public controller = 'Cliente/AllProfiles';
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(private service: ApiService) {
+    this.dataSource = new MatTableDataSource();
+  }
+
+  loadtable(data: any[]) {
+    this.displayedColumns = [];
+
+    for (let column in data[0]) {
+      this.displayedColumns.push(column);
+    }
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
   ngOnInit(): void {
+    this.service.getAll(this.controller).subscribe((resp: any) => {
 
-    const color = {
-      idColor: 11,
-      color1: "plateadibirips jijijijijij"
-    }
+      for (let index = 0; index < resp.length; index++) {
+        this.loadtable([resp[index]]);
+      }
 
-    this.service.getAll(this.controller).subscribe((resp:any) => {
       console.log(resp);
-      this.clientes = resp;
+      this.dataSource.data = resp;
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      this.conductores = resp;
     })
 
     //Crear

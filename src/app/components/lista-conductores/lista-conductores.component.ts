@@ -12,9 +12,15 @@ import { ApiService } from 'src/app/services/api.service';
 export class ListaConductoresComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = [];
+  public conductores: Array<any> = [];
+  public controller = 'Conductor/AllProfiles';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(private service: ApiService) {
+    this.dataSource = new MatTableDataSource();
+  }
 
   loadtable(data: any[]) {
     this.displayedColumns = [];
@@ -22,13 +28,6 @@ export class ListaConductoresComponent implements OnInit {
     for (let column in data[0]) {
       this.displayedColumns.push(column);
     }
-  }
-
-  public conductores: Array<any> = [];
-  public controller = 'Conductor/AllProfiles';
-
-  constructor(private service: ApiService) {
-    this.dataSource = new MatTableDataSource();
   }
 
   ngAfterViewInit(): void {
