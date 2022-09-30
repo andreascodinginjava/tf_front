@@ -2,7 +2,6 @@
 
 <div class="contenedor" *ngIf="cliente==true">
     <div class="crearServicio">
-        <div class="espacio"></div>
         <div class="formulario">
             <br>
             <div class="titulo2">
@@ -86,7 +85,6 @@
                 <br>
             </form>
         </div>
-        <div class="espacio"></div>
     </div>
     <div class="listaServicio">
         <div class="titulo">
@@ -96,19 +94,37 @@
             <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
                 <mat-card class="servicio-card" *cdkVirtualFor="let servicioC of serviciosCliente">
                     <mat-card-header>
-                        <mat-card-title>{{nombre}}</mat-card-title>
+                        <mat-card-title>{{servicioC.nombreCliente}} {{servicioC.apellidoCliente}}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div class="contenido">
                             <div class="datos">
-                                <span><strong>Mercancia:</strong></span><br>
-                                <span><strong>Tipo de mercancia:</strong></span><br>
-                                <span><strong>Fecha:</strong></span><br>
-                                <span><strong>Hora:</strong></span><br>
+                                <div class="valor">
+                                    <label class="fila">Mercania:</label>
+                                    <label>{{servicioC.nombreMercancia}}</label>
+                                </div>
+                                <div class="valor">
+                                    <label class="fila">Tipo de mercancia:</label>
+                                    <label>{{servicioC.tipoMercancia}}</label>
+                                </div>
+                                <div class="valor">
+                                    <label class="fila">Fecha:</label>
+                                    <label>{{servicioC.fechaServicio}}</label>
+                                </div>
                             </div>
                             <div class="direccion">
-                                <span><strong>Direccion origen:</strong></span><br>
-                                <span><strong>Direccion destino:</strong></span>
+                                <div class="valor">
+                                    <label class="fila">Direccion origen:</label>
+                                    <label>{{servicioC.direccionOrigen}}</label>
+                                </div>
+                                <div class="valor">
+                                    <label class="fila">Direccion destino:</label>
+                                    <label>{{servicioC.direccionDestino}}</label>
+                                </div>
+                                <div class="valor">
+                                    <label class="fila">Ciudad:</label>
+                                    <label>{{servicioC.ciudadServicio}}</label>
+                                </div>
                             </div>
                         </div>
                     </mat-card-content>
@@ -124,25 +140,54 @@
             <span>Servicios publicados</span>
         </div>
         <div class="publicados">
-            <mat-card class="servicioP-card">
-                <mat-card-header>
-                    <mat-card-title>Shiba Inu</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>
-                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                        bred for hunting.
-                    </p>
-                </mat-card-content>
-            </mat-card>
+            <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                <mat-card class="servicio-card" *cdkVirtualFor="let servicioP of serviciosPublicados">
+                    <mat-card-header>
+                        <mat-card-title>{{servicioP.nombreCliente}} {{servicioP.apellidoCliente}} - {{servicioP.nombreMercancia}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="contenido">
+                            <div class="datos">
+                                <div class="valor">
+                                    <label class="fila">Tipo de mercancia:</label>
+                                    <label>{{servicioP.tipoMercancia}}</label>
+                                </div>
+                                <div class="valor">
+                                    <label class="fila">Fecha:</label>
+                                    <label>{{servicioP.fechaServicio}}</label>
+                                </div>
+                                <div class="valor">
+                                    <label class="fila">Email:</label>
+                                    <label>{{servicioP.emailCliente}}</label>
+                                </div>
+                            </div>
+                            <div class="direccion">
+                                <div class="valor">
+                                    <label class="fila">Direccion origen:</label>
+                                    <label>{{servicioP.direccionOrigen}}</label>
+                                </div>
+                                <div class="valor">
+                                    <label class="fila">Direccion destino:</label>
+                                    <label>{{servicioP.direccionDestino}}</label>
+                                </div>
+                                <div class="valor">
+                                    <label class="fila">Ciudad:</label>
+                                    <label>{{servicioP.ciudadServicio}}</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bAcep">
+                            <button class="aceptar">Aceptar</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </cdk-virtual-scroll-viewport>
         </div>
     </div>
     <div class="imagen">
-        <div class="espacio2"></div>
+        <div class="espacio"></div>
         <div class="side">
             <img src="assets\images\side.jpg" alt="">
         </div>
-        <div class="espacio2"></div>
     </div>
 </div>

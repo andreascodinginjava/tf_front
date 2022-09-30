@@ -23,10 +23,11 @@ export class SeccionInicioComponent implements OnInit {
     {name: 'Solido', abbreviation: 'SOL'}
   ];
 
-  public cliente = true;
-  public controller = 'Servicio';
+  public cliente = false;
+  public controllerCliente = 'Servicio/Clientes';
+  public controllerConductor = 'Servicio/Publicados'
   public serviciosCliente = [];
-  public nombre = 'Cecilia Ruiz';
+  public serviciosPublicados = [];
 
   constructor(private fb: FormBuilder, private service: ApiService) {}
 
@@ -40,12 +41,15 @@ export class SeccionInicioComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.cliente) {
-      this.service.getAll(this.controller).subscribe((resp:any) => {
+      this.service.getById(this.controllerCliente, "1001329488").subscribe((resp:any) => {
         console.log(resp);
         this.serviciosCliente = resp;
       })
     } else {
-      console.log('Conductor');
+      this.service.getAll(this.controllerConductor).subscribe((resp:any) => {
+        console.log(resp);
+        this.serviciosPublicados = resp;
+      })
     }
   }
 

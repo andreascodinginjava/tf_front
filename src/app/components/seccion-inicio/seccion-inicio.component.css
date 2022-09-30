@@ -192,3 +192,26 @@ img {
     height: 650px;
     width: 100%;
 }
+
+.valor {
+    display: flex;
+}
+
+.valor label {
+    width: 40%;
+    margin: auto;
+}
+
+.fila {
+    font-weight: bold;
+}
+
+.bAcep {
+    text-align: right;
+}
+
+.aceptar {
+    margin-top: 20px;
+    height: 20px;
+    width: 20%;
+}
