@@ -23,7 +23,7 @@ export class SeccionInicioComponent implements OnInit {
     {name: 'Solido', abbreviation: 'SOL'}
   ];
 
-  public cliente = false;
+  public cliente = true;
   public controller = 'Servicio';
   public serviciosCliente = [];
   public nombre = 'Cecilia Ruiz';

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-  _url = "https://localhost:7148/api/";
+  _url = "https://localhost:7095/api/";
 
   constructor(private http: HttpClient) { }
 
