@@ -5,8 +5,7 @@ interface Calificacion {
   recomendaciones: number,
   total: number,
   servicios: number,
-  estrellas: number,
-  comentario: string
+  estrellas: number
 }
 
 @Component({
@@ -20,20 +19,45 @@ export class SeccionCalificacionComponent implements OnInit {
     recomendaciones: 0,
     total: 0,
     servicios: 0,
-    estrellas: 0,
-    comentario: ''
+    estrellas: 0
   }
+
+  public comentarios = [];
 
   constructor(private service: ApiService) { }
 
   ngOnInit(): void {
-    this.service.getById('Calificacion', '369147258').subscribe((resp:any) => {
+    this.service.getById('Calificacion/Conductor', '123456789').subscribe((resp:any) => {
       console.log(resp);
       
-      this.calificacion.recomendaciones = (resp.recoPositiva * 100) / (resp.recoPositiva + resp.recoNegativa);
-      this.calificacion.estrellas = resp.canEstrellas;
-      this.calificacion.comentario = resp.comentario;
-      
+      let recoPositiva = 0;
+      let recoNegativa = 0;
+      let estrellas = 0;
+
+      for (let i = 0; i < resp.length; i++) {
+        recoPositiva += resp[i].recoPositiva;
+        recoNegativa += resp[i].recoNegativa;
+        estrellas += resp[i].canEstrellas;
+      }
+
+      this.calificacion.recomendaciones = (recoPositiva * 100) / (recoPositiva + recoNegativa);
+      this.calificacion.estrellas = estrellas / resp.length;
+      this.comentarios = resp;
+      console.log(this.calificacion);
+    })
+
+    this.service.getById('Servicio/ValorTotal', '123456789').subscribe((resp:any) => {
+      console.log(resp);
+
+      let valores = 0;
+
+      for (let i = 0; i < resp.length; i++) {
+        valores += resp[i].valorServicio;
+      }
+
+      this.calificacion.total = valores;
+      this.calificacion.servicios = resp.length;
+      console.log(this.calificacion);
     })
   }
 

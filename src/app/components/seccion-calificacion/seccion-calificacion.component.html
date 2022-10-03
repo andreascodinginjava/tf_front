@@ -32,14 +32,15 @@
 </div>
 <br>
 <div class="comentarios">
-    <!--*cdkVirtualFor="let comentario of calificacion.comentario"-->
-    <mat-card class="coment">
-        <mat-card-header>
-            <mat-card-title>Samantha Soto</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <span>{{calificacion.comentario}}</span>
-        </mat-card-content>
-    </mat-card>
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+        <mat-card class="coment" *cdkVirtualFor="let comentario of comentarios">
+            <mat-card-header>
+                <mat-card-title>Calificacion</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <span>{{comentario.comentario}}</span>
+            </mat-card-content>
+        </mat-card>
+    </cdk-virtual-scroll-viewport>
 </div>
 <br>
