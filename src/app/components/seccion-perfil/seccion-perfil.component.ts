@@ -31,7 +31,7 @@ export interface Cliente {
   styleUrls: ['./seccion-perfil.component.css']
 })
 export class SeccionPerfilComponent implements OnInit {
-  perfilCLiente = false;
+  perfilCLiente = true;
   conductor:Conductor = {
     nombre: '',
     apellido: '',
