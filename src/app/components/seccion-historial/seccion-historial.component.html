@@ -1,1 +1,49 @@
 <app-seccion-titulo titulo="Historial"></app-seccion-titulo>
+<br>
+<div class="historialConduc" *ngIf="cliente == false">
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+        <mat-card class="historial" *cdkVirtualFor="let historial of historialConductor">
+            <mat-card-header>
+                <mat-card-title>{{historial.nombreCliente}} {{historial.apellidoCliente}} - {{historial.nombreMercancia}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="campo">
+                    <label class="fila">Fecha:</label>
+                    <label>{{historial.fechaServicio}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Valor:</label>
+                    <label>{{historial.valorServicio}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Ciudad:</label>
+                    <label>{{historial.ciudadServicio}}</label>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </cdk-virtual-scroll-viewport>
+</div>
+<br><br>
+<div class="historialConduc" *ngIf="cliente == true">
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+        <mat-card class="historial" *cdkVirtualFor="let historial of historialCliente">
+            <mat-card-header>
+                <mat-card-title>{{historial.nombreConductor}} {{historial.apellidoConductor}} - {{historial.nombreMercancia}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="campo">
+                    <label class="fila">Fecha:</label>
+                    <label>{{historial.fechaServicio}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Valor:</label>
+                    <label>{{historial.valorServicio}}</label>
+                </div>
+                <div class="campo">
+                    <label class="fila">Ciudad:</label>
+                    <label>{{historial.ciudadServicio}}</label>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </cdk-virtual-scroll-viewport>
+</div>

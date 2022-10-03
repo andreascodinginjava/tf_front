@@ -1,0 +1,32 @@
+.example-viewport {
+    height: 500px;
+    width: 100%;
+}
+
+.historialConduc {
+    width: 60%;
+    margin: auto;
+}
+
+.historial {
+    width: 95%;
+    margin: auto;
+    border-radius: 30px;
+}
+
+.mat-card-title {
+    color: rgb(0, 146, 202);
+    font-size: 20px;
+}
+
+.campo {
+    display: flex;
+    font-size: 14px;
+    height: 20px;
+}
+
+.fila {
+    font-weight: bold;
+    margin-left: 20px;
+    width: 10%;
+}
