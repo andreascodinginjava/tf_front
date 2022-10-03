@@ -1,0 +1,55 @@
+.example-viewport {
+    height: 500px;
+    width: 100%;
+}
+
+.servicioConduc {
+    width: 60%;
+    margin: auto;
+}
+
+.servicios {
+    width: 95%;
+    margin: auto;
+    border-radius: 30px;
+}
+
+.mat-card-title {
+    color: rgb(0, 146, 202);
+    font-size: 20px;
+}
+
+.mat-card {
+    display: flex;
+}
+
+.info {
+    width: 80%;
+}
+
+.campo {
+    display: flex;
+    font-size: 14px;
+    height: 20px;
+}
+
+.fila {
+    font-weight: bold;
+    margin-left: 20px;
+    width: 30%;
+}
+
+.boton {
+    text-align: right;
+    width: 20%;
+}
+
+button {
+    background-color: rgb(147, 222, 255);
+    color: rgb(34, 40, 49);
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 100%;
+    border-radius: 50px;
+}

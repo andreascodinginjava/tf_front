@@ -1,1 +1,72 @@
 <app-seccion-titulo titulo="Servicios"></app-seccion-titulo>
+<br>
+<div class="servicioConduc" *ngIf="cliente == false">
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+        <mat-card class="servicios" *cdkVirtualFor="let servicio of serviciosConductor">
+            <div class="info">
+                <mat-card-header>
+                    <mat-card-title>{{servicio.nombreCliente}} {{servicio.apellidoCliente}} - {{servicio.nombreMercancia}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="campo">
+                        <label class="fila">Fecha:</label>
+                        <label>{{servicio.fechaServicio}}</label>
+                    </div>
+                    <div class="campo">
+                        <label class="fila">Direccion origen:</label>
+                        <label>{{servicio.direccionOrigen}}</label>
+                    </div>
+                    <div class="campo">
+                        <label class="fila">Direccion destino:</label>
+                        <label>{{servicio.direccionDestino}}</label>
+                    </div>
+                    <div class="campo">
+                        <label class="fila">Email:</label>
+                        <label>{{servicio.emailCliente}}</label>
+                    </div>
+                    <div class="campo">
+                        <label class="fila">Ciudad:</label>
+                        <label>{{servicio.ciudadServicio}}</label>
+                    </div>
+                </mat-card-content>
+            </div>
+            <div class="boton">
+                <button class="aceptar">Chat</button>
+            </div>
+        </mat-card>
+    </cdk-virtual-scroll-viewport>
+</div>
+<br>
+<div class="servicioConduc" *ngIf="cliente == true">
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+        <mat-card class="servicios" *cdkVirtualFor="let servicio of serviciosCliente">
+            <div class="info">
+                <mat-card-header>
+                    <mat-card-title>{{servicio.nombreConductor}} {{servicio.apellidoConductor}} - {{servicio.nombreMercancia}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="campo">
+                        <label class="fila">Fecha:</label>
+                        <label>{{servicio.fechaServicio}}</label>
+                    </div>
+                    <div class="campo">
+                        <label class="fila">Direccion origen:</label>
+                        <label>{{servicio.direccionOrigen}}</label>
+                    </div>
+                    <div class="campo">
+                        <label class="fila">Direccion destino:</label>
+                        <label>{{servicio.direccionDestino}}</label>
+                    </div>
+                    <div class="campo">
+                        <label class="fila">Ciudad:</label>
+                        <label>{{servicio.ciudadServicio}}</label>
+                    </div>
+                </mat-card-content>
+            </div>
+            <div class="boton">
+                <button class="aceptar">Rastrear</button><br>
+                <button class="aceptar">Chat</button>
+            </div>
+        </mat-card>
+    </cdk-virtual-scroll-viewport>
+</div>
