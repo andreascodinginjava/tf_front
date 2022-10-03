@@ -68,3 +68,20 @@ img {
 .fila {
     font-weight: bold;
 }
+
+.boton {
+    text-align: right;
+    width: 40%;
+    margin: auto;
+    margin-right: 0px;
+}
+
+button {
+    background-color: rgb(147, 222, 255);
+    color: rgb(34, 40, 49);
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 100%;
+    border-radius: 50px;
+}
