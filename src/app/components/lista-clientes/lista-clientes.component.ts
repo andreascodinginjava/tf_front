@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/services/api.service';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ModalTemplateComponent } from '../modal-template/modal-template.component';
 import { ModalService } from 'src/app/services/modal.service';
 
@@ -26,8 +26,8 @@ export class ListaClientesComponent implements OnInit {
   }
 
   openDialog() {
-this.modalservice.titulo="Clientes"
-this.modalservice.Accion="Agregar nuevo"
+    this.modalservice.titulo = "Clientes"
+    this.modalservice.Accion = "Agregar nuevo"
     this.dialog.open(ModalTemplateComponent, {
       width: 'auto',
       height: 'auto'

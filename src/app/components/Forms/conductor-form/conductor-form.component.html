@@ -1,0 +1,248 @@
+<form [formGroup]="conductorForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="titSeccion">
+        <span>Informacion del conductor</span>
+    </div><br>
+    
+    <!--Numero de identificacion-->
+    <div class="error"
+        *ngIf="conductorForm.controls['dni'].invalid && (conductorForm.controls['dni'].touched || conductorForm.controls['dni'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['dni'].hasError('required')">
+            * Numero de identificacion es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Numero de identificacion</span><br>
+        <input type="number" formControlName="dni" autocomplete="off">
+    </div>
+    <!--Nombres-->
+    <div class="error"
+        *ngIf="conductorForm.controls['name'].invalid && (conductorForm.controls['name'].touched || conductorForm.controls['name'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['name'].hasError('required')">
+            * Nombres es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Nombres</span><br>
+        <input type="text" formControlName="name" autocomplete="off">
+    </div>
+    <!--Apellidos-->
+    <div class="error"
+        *ngIf="conductorForm.controls['lastName'].invalid && (conductorForm.controls['lastName'].touched || conductorForm.controls['lastName'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['lastName'].hasError('required')">
+            * Apellidos es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Apellidos</span><br>
+        <input type="text" formControlName="lastName" autocomplete="off">
+    </div>
+    <!--Correo electronico-->
+    <div class="error"
+        *ngIf="conductorForm.controls['email'].invalid && (conductorForm.controls['email'].touched || conductorForm.controls['email'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['email'].hasError('required')">
+            * Correo electronico es requerido
+        </mat-error>
+        <mat-error *ngIf="conductorForm.controls['email'].hasError('email')">
+            * No es un correo electronico
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Correo electronico</span><br>
+        <input type="email" formControlName="email" autocomplete="off">
+    </div>
+    <!--Clave-->
+    <div class="error"
+        *ngIf="conductorForm.controls['clave'].invalid && (conductorForm.controls['clave'].touched || conductorForm.controls['clave'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['clave'].hasError('required')">
+            * Contrasena es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Contrasena</span><br>
+        <input type="password" formControlName="clave" autocomplete="off">
+    </div>
+    <!--Repetir clave-->
+    <div class="error"
+        *ngIf="conductorForm.controls['clave2'].invalid && (conductorForm.controls['clave2'].touched || conductorForm.controls['clave2'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['clave2'].hasError('required')">
+            * Confirmar contrasena es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Confirmar contrasena</span><br>
+        <input type="password" formControlName="clave2" autocomplete="off">
+    </div>
+    <!--Ciudad-->
+    <div class="error"
+        *ngIf="conductorForm.controls['ciudad'].invalid && (conductorForm.controls['ciudad'].touched || conductorForm.controls['ciudad'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['ciudad'].hasError('required')">
+            * Ciudad es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Ciudad de residencia</span><br>
+        <mat-select placeholder="Ciudad" formControlName="ciudad">
+            <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.abbreviation">
+                {{ ciudad.name }}
+            </mat-option>
+        </mat-select>
+    </div>
+    <!--Genero-->
+    <div class="error"
+        *ngIf="conductorForm.controls['genero'] && (conductorForm.controls['genero'].touched || conductorForm.controls['genero'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['genero'].hasError('required')">
+            * Genero es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Genero</span><br>
+        <mat-select placeholder="Genero" formControlName="genero">
+            <mat-option *ngFor="let genero of generos" [value]="genero.abbreviation">
+                {{ genero.name }}
+            </mat-option>
+        </mat-select>
+    </div>
+    <!--Foto-->
+    <div class="campo" id="input-file">
+        <span>Foto del conductor</span><br>
+        <div class="file">
+            <input type="file" class="upload">
+        </div>
+    </div>
+
+    <!----> <br>
+
+    <div class="titSeccion" id="titSeccionDere">
+        <span>Informacion del conductor</span>
+    </div><br>
+
+    <!--Capacidad-->
+    <div class="error"
+        *ngIf="conductorForm.controls['capacidad'].invalid && (conductorForm.controls['capacidad'].touched || conductorForm.controls['capacidad'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['capacidad'].hasError('required')">
+            * Capacidad es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Capacidad</span><br>
+        <input type="text" formControlName="capacidad" autocomplete="off">
+    </div>
+    <!--Modelo-->
+    <div class="error"
+        *ngIf="conductorForm.controls['modelo'].invalid && (conductorForm.controls['modelo'].touched || conductorForm.controls['modelo'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['modelo'].hasError('required')">
+            * Modelo es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Modelo</span><br>
+        <input type="text" formControlName="modelo" autocomplete="off">
+    </div>
+    <!--Capacidad-->
+    <div class="error"
+        *ngIf="conductorForm.controls['color'] && (conductorForm.controls['color'].touched || conductorForm.controls['color'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['color'].hasError('required')">
+            * Color es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Color</span><br>
+        <mat-select placeholder="Color" formControlName="color">
+            <mat-option *ngFor="let color of colores" [value]="color.abbreviation">
+                {{ color.name }}
+            </mat-option>
+        </mat-select>
+    </div>
+    <!--Tipo de vehiculo-->
+    <div class="error"
+        *ngIf="conductorForm.controls['tipoVehiculo'] && (conductorForm.controls['tipoVehiculo'].touched || conductorForm.controls['tipoVehiculo'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['tipoVehiculo'].hasError('required')">
+            * Tipo de vehiculo es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Tipo de vehiculo</span><br>
+        <mat-select placeholder="Tipo de vehiculo" formControlName="tipoVehiculo">
+            <mat-option *ngFor="let tipoVehiculo of tipoVehiculos" [value]="tipoVehiculo.abbreviation">
+                {{ tipoVehiculo.name }}
+            </mat-option>
+        </mat-select>
+    </div>
+    <!--Foto-->
+    <div class="campo" id="input-file">
+        <span>Foto del vehiculo</span><br>
+        <div class="file">
+            <input type="file" class="upload">
+        </div>
+    </div>
+    <!--Licencia-->
+    <!--<button class="contenedor-btn-file">
+                    <label for="btn-file">
+                        Adjuntar
+                    </label>
+                    <input type="file" id="btn-file">
+                </button>-->
+    <div class="campo" id="input-file">
+        <span>Licencia de conduccion</span><br>
+        <div class="file">
+            <input type="file" class="upload">
+        </div>
+    </div>
+    <!--SOAT-->
+    <div class="campo" id="input-file">
+        <span>SOAT</span><br>
+        <div class="file">
+            <input type="file" class="upload">
+        </div>
+    </div>
+    <!--Tarjeta de propiedad-->
+    <div class="campo" id="input-file">
+        <span>Tarjeta de propiedad</span><br>
+        <div class="file">
+            <input type="file" class="upload">
+        </div>
+    </div>
+
+    <!----> <br>
+
+    <div class="titSeccion">
+        <span>Configuracion del medio de pago</span>
+    </div><br>
+
+    <!--Numero tarjeta-->
+    <div class="error"
+        *ngIf="conductorForm.controls['nTarjeta'].invalid && (conductorForm.controls['nTarjeta'].touched || conductorForm.controls['nTarjeta'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['nTarjeta'].hasError('required')">
+            * Numero de la tarjeta es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Numero de la tarjeta</span><br>
+        <input type="text" formControlName="nTarjeta" autocomplete="off">
+    </div>
+    <!--Fecha vencimiento-->
+    <div class="error"
+        *ngIf="conductorForm.controls['fechaVencimiento'].invalid && (conductorForm.controls['fechaVencimiento'].touched || conductorForm.controls['fechaVencimiento'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['fechaVencimiento'].hasError('required')">
+            * Fecha de vencimiento es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Fecha de vencimiento</span><br>
+        <input type="text" formControlName="fechaVencimiento" autocomplete="off">
+    </div>
+    <!--Codigo seguridad-->
+    <div class="error"
+        *ngIf="conductorForm.controls['codigoSeguridad'].invalid && (conductorForm.controls['codigoSeguridad'].touched || conductorForm.controls['codigoSeguridad'].dirty)">
+        <mat-error *ngIf="conductorForm.controls['codigoSeguridad'].hasError('required')">
+            * Codigo de seguridad es requerido
+        </mat-error>
+    </div>
+    <div class="campo">
+        <span>Codigo de seguridad</span><br>
+        <input type="text" formControlName="codigoSeguridad" autocomplete="off">
+    </div>
+    <div class="boton">
+        <button type="submit"><strong>Crear</strong></button><br>
+    </div>
+</form>

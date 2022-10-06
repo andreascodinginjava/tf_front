@@ -15,3 +15,14 @@
     border: none;
     box-shadow: none;
 }
+
+button {
+    background-color: rgb(147, 222, 255);
+    color: rgb(34, 40, 49);
+    border-radius: 50px;
+    width: 30%;
+}
+
+.boton {
+    text-align: center;
+}

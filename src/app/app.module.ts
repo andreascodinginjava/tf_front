@@ -44,6 +44,8 @@ import { TableComponent } from './components/table/table.component';
 import { ModalTemplateComponent } from './components/modal-template/modal-template.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ConductorFormComponent } from './components/Forms/conductor-form/conductor-form.component';
+import { ServicioFormComponent } from './components/Forms/servicio-form/servicio-form.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ListaClientesComponent,
     ListaConductoresComponent,
     ModalTemplateComponent,
+    ConductorFormComponent,
+    ServicioFormComponent,
   ],
   imports: [
     BrowserModule,
