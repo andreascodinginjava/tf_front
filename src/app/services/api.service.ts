@@ -18,6 +18,7 @@ export class ApiService {
   }
 
   getById(controller:string, id:string) {
+   let  Data:any
     return this.http.get(this._url+controller+'/'+id);
   }
 

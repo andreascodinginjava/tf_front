@@ -1,0 +1,130 @@
+.supercontenedor {
+  background-color: rgb(34, 40, 49);
+}
+
+.espacio {
+  height: 15%;
+}
+
+.contenedor {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  background-color: rgb(57, 62, 70);
+  border-radius: 20px;
+}
+
+.imagen {
+  /*background-image: url('C:\Users\User\Documents\Proyecto\tf_front\src\assets\images\rc.jpg');
+  background-position: center;
+background-attachment: contain;
+background-size: cover;*/
+  opacity: 40%;
+  width: 30%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.imagen span {
+  color: rgb(247, 247, 247);
+  font-size: 40px;
+  margin: 10px;
+}
+
+.imagen p {
+  color: rgb(247, 247, 247);
+  font-size: 20px;
+  margin: 10px;
+}
+
+.formulario {
+  width: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+form {
+  width: 400px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.campo {
+  border: 1px solid rgb(96, 100, 112);
+  margin-bottom: 10px;
+  border-radius: 30px;
+  box-shadow: 3px 5px rgba(23, 27, 34, 0.178);
+}
+
+.campo input {
+  background: none;
+  width: 90%;
+  border: none;
+  outline: none;
+  margin-left: 14px;
+  color: black;
+  font-size: 14px;
+}
+
+.campo span {
+  margin: 15px;
+  color: rgb(142, 144, 151);
+  font-size: 12px;
+}
+
+.form-control-log:focus {
+  background: none;
+}
+
+.mat-select {
+  width: 90%;
+  margin-left: 14px;
+  color: white !important;
+}
+
+::ng-deep .mat-select-content {
+  color: blueviolet !important;
+}
+
+.boton {
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  background-color: rgb(147, 222, 255);
+  color: rgb(34, 40, 49);
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 50%;
+  border-radius: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(247, 247, 247);
+  font-size: 12px;
+}
+
+.ng-touched.ng-invalid:is(label),
+.ng-dirty.ng-invalid:is(label) {
+  border: 2px solid red;
+}
+
+.error {
+  color: brown;
+  font-size: 12px;
+  margin-left: 14px;
+  margin-top: -5px;
+}
+
+::placeholder { color: blue; }
+
+span .mat-select-placeholder .mat-select-min-line .ng-tns-c122-1 .ng-star-inserted {
+  color: aqua;
+}
+
+.cdk-overlay-origin {
+  color: red;
+}

@@ -33,7 +33,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ClienteFormComponent } from './components/cliente-form/cliente-form.component';
+import { ClienteFormComponent } from './components/Forms/cliente-form/cliente-form.component';
 import { ActivarUsuarioComponent } from './components/activar-usuario/activar-usuario.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ListaClientesComponent } from './components/lista-clientes/lista-clientes.component';
@@ -41,6 +41,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListaConductoresComponent } from './components/lista-conductores/lista-conductores.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TableComponent } from './components/table/table.component';
+import { ModalTemplateComponent } from './components/modal-template/modal-template.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -63,6 +66,7 @@ import { TableComponent } from './components/table/table.component';
     ActivarUsuarioComponent,
     ListaClientesComponent,
     ListaConductoresComponent,
+    ModalTemplateComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +81,7 @@ import { TableComponent } from './components/table/table.component';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -86,7 +91,8 @@ import { TableComponent } from './components/table/table.component';
     ReactiveFormsModule,
     NgChartsModule,
     HttpClientModule,
-    ScrollingModule
+    ScrollingModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/services/api.service';
+import {MatDialog} from '@angular/material/dialog';
+import { ModalTemplateComponent } from '../modal-template/modal-template.component';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-lista-clientes',
@@ -18,8 +21,17 @@ export class ListaClientesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private service: ApiService) {
+  constructor(public modalservice: ModalService, private service: ApiService, public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource();
+  }
+
+  openDialog() {
+this.modalservice.titulo="Clientes"
+this.modalservice.Accion="Agregar nuevo"
+    this.dialog.open(ModalTemplateComponent, {
+      width: 'auto',
+      height: 'auto'
+    });
   }
 
   loadtable(data: any[]) {

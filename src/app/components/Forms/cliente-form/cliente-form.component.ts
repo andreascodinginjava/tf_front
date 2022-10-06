@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
+import { Cliente } from '../../seccion-perfil/seccion-perfil.component';
 
 @Component({
   selector: 'app-cliente-form',
@@ -36,9 +38,7 @@ export class ClienteFormComponent {
     {name: 'Otro', abbreviation: 'O'}
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, public service:ApiService) {}
 
-  onSubmit(): void {
-    alert('Thanks!');
-  }
+  onSubmit(): void {}
 }
