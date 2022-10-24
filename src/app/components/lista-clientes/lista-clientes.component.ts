@@ -6,6 +6,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalTemplateComponent } from '../modal-template/modal-template.component';
 import { ModalService } from 'src/app/services/modal.service';
+import { Cliente } from 'src/app/Models/Cliente';
 
 @Component({
   selector: 'app-lista-clientes',
@@ -34,12 +35,61 @@ export class ListaClientesComponent implements OnInit {
     });
   }
 
+  inactivarRegistro(value: any) {
+    console.log(value);
+    let cliente: Cliente = {
+      idCliente: 0,
+      nombreCliente: "",
+      apellidoCliente: "",
+      emailCliente: "",
+      pswCliente: "",
+      estadoCliente: "",
+      ciudadClienteFK: 0,
+      generoClienteFk: 0,
+    }
+
+    this.service.getById("Cliente", value).subscribe((resp: any) => {
+      console.log(resp);
+      cliente.idCliente = resp.idCliente;
+      cliente.nombreCliente = resp.nombreCliente;
+      cliente.apellidoCliente = resp.apellidoCliente;
+      cliente.emailCliente = resp.emailCliente;
+      cliente.pswCliente = resp.pswCliente;
+      cliente.estadoCliente = "INACTIVO";
+      cliente.ciudadClienteFK = resp.ciudadClienteFk;
+      cliente.generoClienteFk = resp.generoClienteFk;
+      console.log(cliente);
+
+      this.service.update("Cliente", value, cliente).subscribe((resp) => {
+        console.log(cliente);
+        console.log(resp);
+      })
+
+      this.refresh();
+    })
+  }
+
+  refresh(): void {
+    window.location.reload();
+  }
+
+  editarRegistro(value: any) {
+    this.modalservice.titulo = "Clientes"
+    this.modalservice.Accion = "Editar registro"
+    this.dialog.open(ModalTemplateComponent, {
+      width: 'auto',
+      height: 'auto'
+    });
+  }
+
   loadtable(data: any[]) {
     this.displayedColumns = [];
 
     for (let column in data[0]) {
       this.displayedColumns.push(column);
     }
+
+    this.displayedColumns.push('Acciones');
   }
 
   ngAfterViewInit(): void {

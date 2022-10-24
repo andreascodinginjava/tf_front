@@ -10,8 +10,17 @@
       <table mat-table [dataSource]="dataSource" matSort>
 
         <div matColumnDef="{{disCol}}" *ngFor="let disCol of displayedColumns">
-          <th mat-header-cell *matHeaderCellDef>{{disCol}}</th>
-          <td mat-cell *matCellDef="let element">{{element[disCol]}}</td>
+          <div *ngIf="disCol!='Acciones'">
+            <th mat-header-cell *matHeaderCellDef>{{disCol}}</th>
+            <td mat-cell *matCellDef="let element">{{element[disCol]}}</td>
+          </div>\
+          <div *ngIf="disCol=='Acciones'">
+            <th mat-header-cell *matHeaderCellDef>{{disCol}}</th>
+            <td mat-cell *matCellDef="let element">
+              <button class="opcion" (click)="editarRegistro(element.idCliente)"><img src="assets\images\edicion.png" alt="" width="20"></button>
+              <button class="opcion" (click)="inactivarRegistro(element.idCliente)"><img src="assets\images\borrar.png" alt="" width="20"></button>
+            </td>
+          </div>
         </div>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
