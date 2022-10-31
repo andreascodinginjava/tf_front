@@ -11,10 +11,6 @@ export class ApiService {
 
   getAll(controller:string) {
     return this.http.get(this._url+controller);
-
-    /*return this.http.get(this._url).subscribe((res) => {
-      console.log(res);
-    }); */
   }
 
   getById(controller:string, id:string) {

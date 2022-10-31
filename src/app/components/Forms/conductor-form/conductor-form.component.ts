@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Conductor } from 'src/app/Models/Conductor';
 import { Documento } from 'src/app/Models/Documento';
 import { Vehiculo } from 'src/app/Models/Vehiculo';
 import { ApiService } from 'src/app/services/api.service';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-conductor-form',
   templateUrl: './conductor-form.component.html',
   styleUrls: ['./conductor-form.component.css']
 })
-export class ConductorFormComponent {
+export class ConductorFormComponent implements OnInit {
 
   conductorForm = this.fb.group({
     dni: [null, Validators.required],
@@ -41,23 +42,13 @@ export class ConductorFormComponent {
 
   hasUnitNumber = false;
 
-  ciudades = [
-    {name: 'Bogota', abbreviation: 1}
-  ];
+  ciudades:any = [];
 
-  generos = [
-    {name: 'Femenino', abbreviation: 1},
-    {name: 'Masculino', abbreviation: 2},
-    {name: 'Otro', abbreviation: 3}
-  ];
+  generos:any = [];
 
-  colores = [
-    {name: 'Blanco', abbreviation: 4}
-  ];
+  colores:any = [];
 
-  tipoVehiculos = [
-    {name: 'Estacas', abbreviation: 1}
-  ];
+  tipoVehiculos:any = [];
 
   conductor: Conductor = {
     idConductor: 0,
@@ -89,7 +80,41 @@ export class ConductorFormComponent {
     licenciaConduc: "",
   }
 
-  constructor(private fb: FormBuilder, public service:ApiService) { }
+  constructor(private fb: FormBuilder, public service:ApiService, public modalService:ModalService) { }
+  ngOnInit(): void {
+    this.service.getAll("Ciudad").subscribe((resp:any) => {
+      for (let ciudad in resp) {
+        this.ciudades.push(resp[ciudad]);
+      } 
+    });
+
+    this.service.getAll("Genero").subscribe((resp:any) => {
+      for (let genero in resp) {
+        this.generos.push(resp[genero]);
+      }
+    })
+
+    this.service.getAll("TipoVehiculo").subscribe((resp:any) => {
+      for (let tipo in resp) {
+        this.tipoVehiculos.push(resp[tipo]);
+      }
+    })
+
+    this.service.getAll("Color").subscribe((resp:any) => {
+      for (let color in resp) {
+        this.colores.push(resp[color]);
+      }
+    })
+
+    if (this.modalService.accion.value == "editarConductor") {
+      this.conductorForm.controls["dni"].setValue(this.modalService.conductor.dni);
+      this.conductorForm.controls["name"].setValue(this.modalService.conductor.nombre);
+      this.conductorForm.controls["lastName"].setValue(this.modalService.conductor.apellido);
+      this.conductorForm.controls["email"].setValue(this.modalService.conductor.email);
+      this.conductorForm.controls["placa"].setValue(this.modalService.conductor.placa);
+      this.conductorForm.controls["capacidad"].setValue(this.modalService.conductor.capacidadVehiculo);
+    }
+  }
 
   onSubmit(data: any) {
     // Documento

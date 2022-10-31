@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Cliente } from 'src/app/Models/Cliente';
 import { ApiService } from 'src/app/services/api.service';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-cliente-form',
   templateUrl: './cliente-form.component.html',
   styleUrls: ['./cliente-form.component.css']
 })
-export class ClienteFormComponent {
+export class ClienteFormComponent implements OnInit {
   clienteForm = this.fb.group({
     dni: [null, Validators.required],
     name: [null, Validators.required],
@@ -27,16 +28,8 @@ export class ClienteFormComponent {
   });
 
   hasUnitNumber = false;
-
-  ciudades = [
-    {name: 'Bogota', abbreviation: 1}
-  ];
-
-  generos = [
-    {name: 'Femenino', abbreviation: 1},
-    {name: 'Masculino', abbreviation: 2},
-    {name: 'Otro', abbreviation: 3}
-  ];
+  ciudades:any = [];
+  generos:any = [];
 
   cliente: Cliente = {
     idCliente: 0,
@@ -51,27 +44,66 @@ export class ClienteFormComponent {
 
   controller = "Cliente";
   
-  constructor(private fb: FormBuilder, public service:ApiService) {}
+  constructor(private fb: FormBuilder, public service:ApiService, public modalService:ModalService) {}
 
-  //Crear
-    /*this.service.create("Color", color).subscribe((resp) => {
-      console.log(resp);
-    })*/
+  ngOnInit(): void {
+    this.service.getAll("Ciudad").subscribe((resp:any) => {
+      for (let ciudad in resp) {
+        this.ciudades.push(resp[ciudad]);
+      } 
+    });
+
+    this.service.getAll("Genero").subscribe((resp:any) => {
+      for (let genero in resp) {
+        this.generos.push(resp[genero]);
+      }
+    })
+
+    //this.modalService.accion.subscribe((res) => {
+      if (this.modalService.accion.value == "editarCliente") {
+        //console.log(this.modalService.cliente);
+
+        this.clienteForm.controls["dni"].setValue(this.modalService.cliente.dni);
+        this.clienteForm.controls["name"].setValue(this.modalService.cliente.nombre);
+        this.clienteForm.controls["lastName"].setValue(this.modalService.cliente.apellido);
+        this.clienteForm.controls["email"].setValue(this.modalService.cliente.email);
+      }
+    //})
+  }
 
   onSubmit(data:any) {
-    this.cliente.idCliente = data.dni;
-    this.cliente.nombreCliente = data.name;
-    this.cliente.apellidoCliente = data.lastName;
-    this.cliente.emailCliente = data.email;
-    this.cliente.pswCliente = data.clave;
-    this.cliente.estadoCliente = "ACTIVO";
-    this.cliente.ciudadClienteFK = data.ciudad;
-    this.cliente.generoClienteFk = data.genero;
+    if (this.modalService.accion.value == "crearCliente") {
+      if (this.clienteForm.valid) {
+        this.cliente.idCliente = data.dni;
+        this.cliente.nombreCliente = data.name;
+        this.cliente.apellidoCliente = data.lastName;
+        this.cliente.emailCliente = data.email;
+        this.cliente.pswCliente = data.clave;
+        this.cliente.estadoCliente = "ACTIVO";
+        this.cliente.ciudadClienteFK = data.ciudad;
+        this.cliente.generoClienteFk = data.genero;
 
-    console.log(data);
-    console.log(this.cliente);
-    this.service.create(this.controller, this.cliente).subscribe((resp) => {
-      console.log(resp);
-    })
+        this.service.create(this.controller, this.cliente).subscribe((resp) => {
+          console.log(resp);
+        })
+      }
+    } else {
+      if (this.clienteForm.valid) {
+        this.cliente.idCliente = data.dni;
+        this.cliente.nombreCliente = data.name;
+        this.cliente.apellidoCliente = data.lastName;
+        this.cliente.emailCliente = data.email;
+        this.cliente.pswCliente = data.clave;
+        this.cliente.estadoCliente = "ACTIVO";
+        this.cliente.ciudadClienteFK = data.ciudad;
+        this.cliente.generoClienteFk = data.genero;
+
+        //console.log(data);
+        //console.log(this.cliente);
+        this.service.update(this.controller, data.dni, this.cliente).subscribe((resp) => {
+          console.log(resp);
+        })
+      }
+    }
   }
 }

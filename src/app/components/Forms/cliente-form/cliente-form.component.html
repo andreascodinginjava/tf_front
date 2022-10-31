@@ -78,8 +78,8 @@
     <div class="campo">
         <span>Ciudad de residencia</span><br>
         <mat-select placeholder="Ciudad" formControlName="ciudad">
-            <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.abbreviation">
-                {{ ciudad.name }}
+            <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.idCiudad">
+                {{ ciudad.ciudad1 }}
             </mat-option>
         </mat-select>
     </div>
@@ -93,8 +93,8 @@
     <div class="campo">
         <span>Genero</span><br>
         <mat-select placeholder="Genero" formControlName="genero">
-            <mat-option *ngFor="let genero of generos" [value]="genero.abbreviation">
-                {{ genero.name }}
+            <mat-option *ngFor="let genero of generos" [value]="genero.idGenero">
+                {{ genero.genero1 }}
             </mat-option>
         </mat-select>
     </div>

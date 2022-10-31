@@ -26,3 +26,10 @@ button {
 .boton {
     text-align: center;
 }
+
+.opcion {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

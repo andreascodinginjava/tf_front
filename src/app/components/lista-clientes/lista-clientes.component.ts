@@ -27,8 +27,7 @@ export class ListaClientesComponent implements OnInit {
   }
 
   openDialog() {
-    this.modalservice.titulo = "Clientes"
-    this.modalservice.Accion = "Agregar nuevo"
+    this.modalservice.accion.next("crearCliente")
     this.dialog.open(ModalTemplateComponent, {
       width: 'auto',
       height: 'auto'
@@ -74,8 +73,8 @@ export class ListaClientesComponent implements OnInit {
   }
 
   editarRegistro(value: any) {
-    this.modalservice.titulo = "Clientes"
-    this.modalservice.Accion = "Editar registro"
+    this.modalservice.accion.next("editarCliente");
+    this.modalservice.cliente = value;
     this.dialog.open(ModalTemplateComponent, {
       width: 'auto',
       height: 'auto'

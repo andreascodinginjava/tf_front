@@ -82,8 +82,8 @@
     <div class="campo">
         <span>Ciudad de residencia</span><br>
         <mat-select placeholder="Ciudad" formControlName="ciudad">
-            <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.abbreviation">
-                {{ ciudad.name }}
+            <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.idCiudad">
+                {{ ciudad.ciudad1 }}
             </mat-option>
         </mat-select>
     </div>
@@ -97,8 +97,8 @@
     <div class="campo">
         <span>Genero</span><br>
         <mat-select placeholder="Genero" formControlName="genero">
-            <mat-option *ngFor="let genero of generos" [value]="genero.abbreviation">
-                {{ genero.name }}
+            <mat-option *ngFor="let genero of generos" [value]="genero.idGenero">
+                {{ genero.genero1 }}
             </mat-option>
         </mat-select>
     </div>
@@ -149,7 +149,7 @@
         <span>Modelo</span><br>
         <input type="text" formControlName="modelo" autocomplete="off">
     </div>
-    <!--Capacidad-->
+    <!--Color-->
     <div class="error"
         *ngIf="conductorForm.controls['color'] && (conductorForm.controls['color'].touched || conductorForm.controls['color'].dirty)">
         <mat-error *ngIf="conductorForm.controls['color'].hasError('required')">
@@ -159,8 +159,8 @@
     <div class="campo">
         <span>Color</span><br>
         <mat-select placeholder="Color" formControlName="color">
-            <mat-option *ngFor="let color of colores" [value]="color.abbreviation">
-                {{ color.name }}
+            <mat-option *ngFor="let color of colores" [value]="color.idColor">
+                {{ color.color1 }}
             </mat-option>
         </mat-select>
     </div>
@@ -174,8 +174,8 @@
     <div class="campo">
         <span>Tipo de vehiculo</span><br>
         <mat-select placeholder="Tipo de vehiculo" formControlName="tipoVehiculo">
-            <mat-option *ngFor="let tipoVehiculo of tipoVehiculos" [value]="tipoVehiculo.abbreviation">
-                {{ tipoVehiculo.name }}
+            <mat-option *ngFor="let tipoVehiculo of tipoVehiculos" [value]="tipoVehiculo.idTipoMercancia">
+                {{ tipoVehiculo.tipoVehiculo1 }}
             </mat-option>
         </mat-select>
     </div>
