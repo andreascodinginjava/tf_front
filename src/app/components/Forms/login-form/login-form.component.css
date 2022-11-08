@@ -2,31 +2,6 @@
     background-color: rgb(34, 40, 49);
 }
 
-* {
-	box-sizing: border-box;
-}
-
-body {
-	background-color: rgb(34, 40, 49);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	height: 100vh;
-}
-
-.mat-card {
-    height:100%;
-    width: 100%;
-    background-color: transparent;
-    
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    outline: none;
-}
-
 .espacio {
     height: 15%;
 }

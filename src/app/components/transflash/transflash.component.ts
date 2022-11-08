@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transflash',
@@ -18,10 +19,20 @@ export class TransflashComponent {
     message: [null, Validators.required]
   });
 
-  constructor(private fb: FormBuilder) {}
+  signupOpWindow = false;
+  loginWindow = false;
+  initWindow = true;
+
+  constructor(private fb: FormBuilder, public router:Router) {}
 
   onSubmit(): void {
     alert('Thanks!');
+  }
+
+  goLogIn(): void {
+    this.loginWindow = true;
+    this.signupOpWindow = false;
+    this.initWindow = false
   }
 
 }

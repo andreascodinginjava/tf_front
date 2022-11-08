@@ -3,8 +3,8 @@
         <span>Trans Flash</span>
     </div>
     <div class="botones">
-        <a href="#">Sign Up</a>
-        <a href="/LogIn">Log In</a>
+        <a href="/LogIn">Sign Up</a>
+        <button>Log In</button>
     </div>
 </div>
 <div class="carrusel">
@@ -79,7 +79,7 @@
                 *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].touched || contactForm.controls['message'].dirty)">
                 <mat-error *ngIf="contactForm.controls['message'].hasError('required')">
                     * Mensaje es requerido
-                </mat-error>                        
+                </mat-error>
             </div>
             <div class="campo">
                 <span>Mensaje</span><br>

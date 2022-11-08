@@ -27,8 +27,7 @@ export class ServicioFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private service: ApiService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   mercancia: Mercancia = {
     idMercancia: 0,

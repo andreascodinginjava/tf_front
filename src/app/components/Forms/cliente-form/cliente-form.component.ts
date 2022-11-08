@@ -28,8 +28,8 @@ export class ClienteFormComponent implements OnInit {
   });
 
   hasUnitNumber = false;
-  ciudades:any = [];
-  generos:any = [];
+  ciudades: any = [];
+  generos: any = [];
 
   cliente: Cliente = {
     idCliente: 0,
@@ -43,67 +43,63 @@ export class ClienteFormComponent implements OnInit {
   }
 
   controller = "Cliente";
-  
-  constructor(private fb: FormBuilder, public service:ApiService, public modalService:ModalService) {}
+
+  constructor(private fb: FormBuilder, public service: ApiService, public modalService: ModalService) { }
 
   ngOnInit(): void {
-    this.service.getAll("Ciudad").subscribe((resp:any) => {
+    this.service.getAll("Ciudad").subscribe((resp: any) => {
       for (let ciudad in resp) {
         this.ciudades.push(resp[ciudad]);
-      } 
+      }
     });
 
-    this.service.getAll("Genero").subscribe((resp:any) => {
+    this.service.getAll("Genero").subscribe((resp: any) => {
       for (let genero in resp) {
         this.generos.push(resp[genero]);
       }
     })
 
     //this.modalService.accion.subscribe((res) => {
-      if (this.modalService.accion.value == "editarCliente") {
-        //console.log(this.modalService.cliente);
+    if (this.modalService.accion.value == "editarCliente") {
+      //console.log(this.modalService.cliente);
 
-        this.clienteForm.controls["dni"].setValue(this.modalService.cliente.dni);
-        this.clienteForm.controls["name"].setValue(this.modalService.cliente.nombre);
-        this.clienteForm.controls["lastName"].setValue(this.modalService.cliente.apellido);
-        this.clienteForm.controls["email"].setValue(this.modalService.cliente.email);
-      }
+      this.clienteForm.controls["dni"].setValue(this.modalService.cliente.dni);
+      this.clienteForm.controls["name"].setValue(this.modalService.cliente.nombre);
+      this.clienteForm.controls["lastName"].setValue(this.modalService.cliente.apellido);
+      this.clienteForm.controls["email"].setValue(this.modalService.cliente.email);
+    }
     //})
   }
 
-  onSubmit(data:any) {
+  onSubmit(data: any) {
     if (this.modalService.accion.value == "crearCliente") {
-      if (this.clienteForm.valid) {
-        this.cliente.idCliente = data.dni;
-        this.cliente.nombreCliente = data.name;
-        this.cliente.apellidoCliente = data.lastName;
-        this.cliente.emailCliente = data.email;
-        this.cliente.pswCliente = data.clave;
-        this.cliente.estadoCliente = "ACTIVO";
-        this.cliente.ciudadClienteFK = data.ciudad;
-        this.cliente.generoClienteFk = data.genero;
+      this.cliente.idCliente = data.dni;
+      this.cliente.nombreCliente = data.name;
+      this.cliente.apellidoCliente = data.lastName;
+      this.cliente.emailCliente = data.email;
+      this.cliente.pswCliente = data.clave;
+      this.cliente.estadoCliente = "ACTIVO";
+      this.cliente.ciudadClienteFK = data.ciudad;
+      this.cliente.generoClienteFk = data.genero;
 
-        this.service.create(this.controller, this.cliente).subscribe((resp) => {
-          console.log(resp);
-        })
-      }
+      this.service.create(this.controller, this.cliente).subscribe((resp) => {
+        console.log(resp);
+      })
     } else {
-      if (this.clienteForm.valid) {
-        this.cliente.idCliente = data.dni;
-        this.cliente.nombreCliente = data.name;
-        this.cliente.apellidoCliente = data.lastName;
-        this.cliente.emailCliente = data.email;
-        this.cliente.pswCliente = data.clave;
-        this.cliente.estadoCliente = "ACTIVO";
-        this.cliente.ciudadClienteFK = data.ciudad;
-        this.cliente.generoClienteFk = data.genero;
+      this.cliente.idCliente = data.dni;
+      this.cliente.nombreCliente = data.name;
+      this.cliente.apellidoCliente = data.lastName;
+      this.cliente.emailCliente = data.email;
+      this.cliente.pswCliente = data.clave;
+      this.cliente.estadoCliente = "ACTIVO";
+      this.cliente.ciudadClienteFK = data.ciudad;
+      this.cliente.generoClienteFk = data.genero;
 
-        //console.log(data);
-        //console.log(this.cliente);
-        this.service.update(this.controller, data.dni, this.cliente).subscribe((resp) => {
-          console.log(resp);
-        })
-      }
+      //console.log(data);
+      //console.log(this.cliente);
+      this.service.update(this.controller, data.dni, this.cliente).subscribe((resp) => {
+        console.log(resp);
+      })
     }
   }
 }

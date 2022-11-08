@@ -46,6 +46,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ConductorFormComponent } from './components/Forms/conductor-form/conductor-form.component';
 import { ServicioFormComponent } from './components/Forms/servicio-form/servicio-form.component';
+import {  LoginFormComponentt } from './components/Forms/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { ServicioFormComponent } from './components/Forms/servicio-form/servicio
     ModalTemplateComponent,
     ConductorFormComponent,
     ServicioFormComponent,
+    LoginFormComponentt,
   ],
   imports: [
     BrowserModule,

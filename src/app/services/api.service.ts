@@ -28,4 +28,8 @@ export class ApiService {
   delete(controller:string, id:string) {
     return this.http.delete(this._url+controller+'/'+id);
   }
+
+  logIn(controller:string, id:number, clave:string) {
+    return this.http.get(this._url+controller+"/"+id+"/"+clave);
+  }
 }

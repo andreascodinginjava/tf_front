@@ -21,7 +21,7 @@
   margin-top: 10px;
 }
 
-.sidenav .mat-toolbar .mat-toolbar-row hr{
+.sidenav .mat-toolbar .mat-toolbar-row hr {
   width: 100%;
   border: transparent;
   border-top: solid 0.1px rgba(247, 247, 247, 0.452) !important;
@@ -39,5 +39,30 @@
 }
 
 .mat-list-item {
-  color: rgba(247, 247, 247, 0.452)!important;
+  color: rgba(247, 247, 247, 0.452) !important;
+}
+
+.salida {
+  background-color: transparent;
+  border: none;
+  text-align: right;
+  cursor: pointer;
+}
+
+.titulo {
+  width: 80%;
+}
+
+.botones {
+  width: 20%;
+  text-align: right;
+}
+
+/*.mat-nav-list {
+  scrollbar-color: rgba(0, 0, 0, .5) !important;
+  scrollbar-width: thin;
+}*/
+
+::-webkit-scrollbar {
+  width: 2em;
 }
