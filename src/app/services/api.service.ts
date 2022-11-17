@@ -21,6 +21,10 @@ export class ApiService {
     return this.http.post(this._url+controller, body);
   }
 
+  createFile(controller:string, vehiculo:string, body:any) {
+    return this.http.post(this._url+controller+"/"+vehiculo, body);
+  }
+
   update(controller:string, id:string, body:any) {
     return this.http.put(this._url+controller+'/'+id, body)
   }

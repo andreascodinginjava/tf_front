@@ -12,6 +12,7 @@
     width: 95%;
     margin: auto;
     border-radius: 30px;
+    margin-bottom: 15px;
 }
 
 .mat-card-title {
@@ -33,6 +34,11 @@
     height: 20px;
 }
 
+.campo label {
+    width: 40%;
+    margin: auto;
+}
+
 .fila {
     font-weight: bold;
     margin-left: 20px;
@@ -52,4 +58,5 @@ button {
     height: 20px;
     width: 100%;
     border-radius: 50px;
+    cursor: pointer;
 }

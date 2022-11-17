@@ -60,6 +60,9 @@
                     <label class="fila">Tipo de vehiculo:</label>
                     <label>{{conductor.vehiculo.tipoVehiculo}}</label>
                 </div>
+                <div>
+                    <input type="file" id="file" (change)="onFileSelected($event)" #fileUpload>
+                </div>
                 <br><br><br>
                 <div class="boton">
                     <button class="aceptar">Modificar</button>

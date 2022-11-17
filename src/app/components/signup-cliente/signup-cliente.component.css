@@ -1,14 +1,18 @@
-.supercontenedor {
-    background-color: rgb(34, 40, 49);
+body {
+	background-color: rgb(34, 40, 49);
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 120vh;
 }
 
 .espacio {
-    height: 15%;
+    height: 5%;
 }
 
 .contenedor {
     display: flex;
-    width: 80%;
+    width: 70%;
     margin: auto;
     background-color: rgb(57, 62, 70);
     border-radius: 20px;
@@ -99,6 +103,7 @@ button {
     height: 30px;
     width: 50%;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 a {

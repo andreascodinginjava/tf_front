@@ -15,7 +15,7 @@
             <Span>Servicios publicados</Span>
         </div>
         <div class="servicio">
-            <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+            <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport" style="color: red;">
                 <mat-card class="servicio-card" *cdkVirtualFor="let servicioC of serviciosCliente">
                     <mat-card-header>
                         <mat-card-title>{{servicioC.nombreCliente}} {{servicioC.apellidoCliente}}</mat-card-title>

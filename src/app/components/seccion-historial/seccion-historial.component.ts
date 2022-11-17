@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class SeccionHistorialComponent implements OnInit {
 
-  public cliente = true;
+  public cliente = false;
   public controllerConductor = "Servicio/Conductor/Historial";
   public historialConductor = [];
   public controllerCliente = "Servicio/Cliente/Historial";

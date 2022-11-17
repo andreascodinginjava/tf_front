@@ -18,21 +18,14 @@ export class TransflashComponent {
     cel: [null, Validators.required],
     message: [null, Validators.required]
   });
-
-  signupOpWindow = false;
-  loginWindow = false;
-  initWindow = true;
-
+  
   constructor(private fb: FormBuilder, public router:Router) {}
 
   onSubmit(): void {
     alert('Thanks!');
   }
 
-  goLogIn(): void {
-    this.loginWindow = true;
-    this.signupOpWindow = false;
-    this.initWindow = false
+  goLogIn() {
+    this.router.navigateByUrl("/LogIn");
   }
-
 }

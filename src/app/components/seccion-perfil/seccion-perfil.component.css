@@ -84,4 +84,5 @@ button {
     height: 20px;
     width: 100%;
     border-radius: 50px;
+    cursor: pointer;
 }
