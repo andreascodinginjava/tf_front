@@ -6,22 +6,31 @@
 }
 
 .titulo {
-    width: 80%;
+    width: 70%;
     color: rgb(247, 247, 247);
     margin-top: 20px;
     font-size: 35px;
 }
 
 .botones {
-    width: auto;
+    width: 30%;
     margin-top: 15px;
+    display: flex;
 }
 
-.botones a {
+.botones button {
     width: 50%;
-    margin: 20px;
-    color: rgb(147, 222, 255);
+    margin: 10px;
+    color: white;
+    background-color: transparent;
+    border: none;
     text-decoration: none;
+}
+
+.mat-select {
+    width: 50%;
+    margin: 10px;
+    font-weight: bold;
 }
 
 .carrusel {

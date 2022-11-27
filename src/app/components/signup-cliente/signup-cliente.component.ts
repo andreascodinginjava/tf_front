@@ -8,6 +8,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class SignupClienteComponent {
 
+  salir:string = '';
+
   clienteForm = this.fb.group({
     dni: [null, Validators.required],
     name: [null, Validators.required],
@@ -41,5 +43,9 @@ export class SignupClienteComponent {
 
   onSubmit(): void {
     alert('Thanks!');
+  }
+
+  goSalir() {
+    this.salir = 'inicio';
   }
 }

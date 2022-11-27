@@ -19,3 +19,60 @@
 .dashboard-card-content {
   text-align: center;
 }
+
+
+.grap1, .grap2, .grap3 {
+  height: 10%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.dashboard, .dashboard2, .dashboard3 {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard, .dashboard3 {
+  display: flex;
+}
+
+.auxiliarity {
+  color: rgb(147, 222, 255);
+}
+
+.card, .card2, .card3 {
+  text-align: center;
+  box-shadow: 2px 2px 2px rgba(185, 185, 185, 0.486);
+  border: none;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.card2 {
+  width: 65%;
+  height: 30%;
+}
+
+.card3 {
+  width: 32%;
+  height: 30%;
+}
+
+.card {
+  width: 32%;
+  height: 30%;
+}
+
+.titulo-card {
+  font-size: large;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}

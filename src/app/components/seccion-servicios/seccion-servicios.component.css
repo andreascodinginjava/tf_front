@@ -15,6 +15,11 @@
     margin-bottom: 15px;
 }
 
+.servicio {
+    width: 90%;
+    margin: auto;
+}
+
 .mat-card-title {
     color: rgb(0, 146, 202);
     font-size: 20px;

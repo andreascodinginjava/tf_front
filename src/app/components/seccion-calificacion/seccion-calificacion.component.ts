@@ -15,6 +15,8 @@ interface Calificacion {
 })
 export class SeccionCalificacionComponent implements OnInit {
 
+  usuario = 0;
+
   calificacion:Calificacion = {
     recomendaciones: 0,
     total: 0,
@@ -24,10 +26,12 @@ export class SeccionCalificacionComponent implements OnInit {
 
   public comentarios = [];
 
-  constructor(private service: ApiService) { }
+  constructor(private service: ApiService) { 
+    this.usuario = JSON.parse(localStorage.getItem("Usuario") );
+  }
 
   ngOnInit(): void {
-    this.service.getById('Calificacion/Conductor', '123456789').subscribe((resp:any) => {
+    this.service.getById('Calificacion/Conductor', this.usuario+'').subscribe((resp:any) => {
       console.log(resp);
       
       let recoPositiva = 0;
@@ -46,7 +50,7 @@ export class SeccionCalificacionComponent implements OnInit {
       console.log(this.calificacion);
     })
 
-    this.service.getById('Servicio/ValorTotal', '123456789').subscribe((resp:any) => {
+    this.service.getById('Servicio/ValorTotal', this.usuario+'').subscribe((resp:any) => {
       console.log(resp);
 
       let valores = 0;

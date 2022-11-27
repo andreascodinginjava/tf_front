@@ -1,6 +1,6 @@
 <app-seccion-titulo titulo="Inicio"></app-seccion-titulo>
 
-<div class="contenedor" *ngIf="cliente==true">
+<div class="contenedor" *ngIf="tipoUsuario=='cl'">
     <div class="crearServicio">
         <div class="formulario">
             <br>
@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<div class="contenedor" *ngIf="cliente==false">
+<div class="contenedor" *ngIf="tipoUsuario=='co'">
     <div class="servicioPublicado">
         <div class="titulo3">
             <span>Servicios publicados</span>

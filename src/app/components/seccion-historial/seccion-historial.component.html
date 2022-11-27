@@ -1,6 +1,6 @@
 <app-seccion-titulo titulo="Historial"></app-seccion-titulo>
 <br>
-<div class="historialConduc" *ngIf="cliente == false">
+<div class="historialConduc" *ngIf="tipoUsuario == 'co'">
     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
         <mat-card class="historial" *cdkVirtualFor="let historial of historialConductor">
             <mat-card-header>
@@ -24,7 +24,7 @@
     </cdk-virtual-scroll-viewport>
 </div>
 <br><br>
-<div class="historialConduc" *ngIf="cliente == true">
+<div class="historialConduc" *ngIf="tipoUsuario == 'cl'">
     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
         <mat-card class="historial" *cdkVirtualFor="let historial of historialCliente">
             <mat-card-header>

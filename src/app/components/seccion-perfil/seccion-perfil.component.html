@@ -1,7 +1,7 @@
 <app-seccion-titulo titulo="Perfil"></app-seccion-titulo>
 <br>
 <div class="espacio"></div>
-<mat-card class="contenedorConductor" *ngIf="perfilCLiente==false">
+<mat-card class="contenedorConductor" *ngIf="tipoUsuario=='co'">
     <mat-card-content>
         <div class="conductor">
             <div class="personal">
@@ -60,9 +60,9 @@
                     <label class="fila">Tipo de vehiculo:</label>
                     <label>{{conductor.vehiculo.tipoVehiculo}}</label>
                 </div>
-                <div>
+                <!--<div>
                     <input type="file" id="file" (change)="onFileSelected($event)" #fileUpload>
-                </div>
+                </div>-->
                 <br><br><br>
                 <div class="boton">
                     <button class="aceptar">Modificar</button>
@@ -73,7 +73,7 @@
 </mat-card>
 <br>
 
-<mat-card class="contenedorCliente" *ngIf="perfilCLiente==true">
+<mat-card class="contenedorCliente" *ngIf="tipoUsuario=='cl'">
     <mat-card-content>
         <div class="cliente">
             <div class="titulo">

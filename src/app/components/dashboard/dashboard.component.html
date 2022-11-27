@@ -1,25 +1,75 @@
 <app-seccion-titulo titulo="Dashboard"></app-seccion-titulo>
-
-<div class="grid-container">
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Contenido de las graficas</div>
-        </mat-card-content>
+<br>
+<div class="contenedor">
+  <div class="dashboard">
+    <mat-card-content class="card">
+      <br><br>
+      <div class="titulo-card">Cantidad de usuarios registrados</div>
+      <mat-card class="grap1">
+        <div class="chart-container">
+          <canvas id="cantUsers">{{cantUsuarios}}</canvas>
+        </div>
       </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </mat-card-content>
+    <mat-card-content class="card">
+      <br><br>
+      <div class="titulo-card">Clientes registrados por ciudad</div>
+      <mat-card class="grap1">
+        <div class="chart-container">
+          <canvas id="clienteCant">{{cliente}}</canvas>
+        </div>
+      </mat-card>
+    </mat-card-content>
+    <mat-card-content class="card">
+      <br><br>
+      <div class="titulo-card">Conductores registrados por ciudad</div>
+      <mat-card class="grap1">
+        <div class="chart-container">
+          <canvas id="conductorCant">{{conductor}}</canvas>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </div>
+  <br>
+  <div class="dashboard3">
+    <mat-card-content class="card2">
+      <br><br>
+      <div class="titulo-card">Valor total vendido por mes</div>
+      <mat-card class="grap2">
+        <div class="chart-container">
+          <canvas id="ventas">{{ventas}}</canvas>
+        </div>
+      </mat-card>
+    </mat-card-content>
+    <mat-card-content class="card3">
+      <br><br>
+      <div class="titulo-card">Servicios realizados por ciudades</div>
+      <mat-card class="grap3">
+        <div class="chart-container">
+          <canvas id="serviciosCiu">{{ventas}}</canvas>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </div>
+  <br>
+  <div class="dashboard3">
+    <mat-card-content class="card3">
+      <br><br>
+      <div class="titulo-card">Tipos de mercancia transportada</div>
+      <mat-card class="grap3">
+        <div class="chart-container">
+          <canvas id="tipoMerc">{{ventas}}</canvas>
+        </div>
+      </mat-card>
+    </mat-card-content>
+    <mat-card-content class="card2">
+      <br><br>
+      <div class="titulo-card">Servicios realizados por mes</div>
+      <mat-card class="grap2">
+        <div class="chart-container">
+          <canvas id="servicios">{{ventas}}</canvas>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </div>
 </div>

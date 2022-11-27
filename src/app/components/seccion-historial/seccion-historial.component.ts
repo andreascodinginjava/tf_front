@@ -8,22 +8,26 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class SeccionHistorialComponent implements OnInit {
 
-  public cliente = false;
+  public tipoUsuario = '';
+  private usuario = 0;
   public controllerConductor = "Servicio/Conductor/Historial";
   public historialConductor = [];
   public controllerCliente = "Servicio/Cliente/Historial";
   public historialCliente = [];
 
-  constructor(private service: ApiService) { }
+  constructor(private service: ApiService) { 
+    this.tipoUsuario = JSON.parse(localStorage.getItem("Tipo"));
+    this.usuario = JSON.parse(localStorage.getItem("Usuario"));
+  }
 
   ngOnInit(): void {
-    if (this.cliente) {
-      this.service.getById(this.controllerCliente, '1001329488').subscribe((resp:any) => {
+    if (this.tipoUsuario == 'cl') {
+      this.service.getById(this.controllerCliente, this.usuario+'').subscribe((resp:any) => {
         console.log(resp);
         this.historialCliente = resp;
       })
     } else {
-      this.service.getById(this.controllerConductor, '123456789').subscribe((resp:any) => {
+      this.service.getById(this.controllerConductor, this.usuario+'').subscribe((resp:any) => {
         console.log(resp);
         this.historialConductor = resp;
       })

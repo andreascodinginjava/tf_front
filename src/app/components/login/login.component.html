@@ -1,19 +1,25 @@
-<body>
-    <mat-card>
-        <div class="contenedor">
-            <div class="imagen">
-                <br><br>
-                <span>TransFlash</span>
-                <p>Transporte de mercancia en toda Bogota</p>
+
+<div *ngIf="login=='logout'">
+    <body>
+        <mat-card>
+            <div class="contenedor">
+                <div class="imagen">
+                    <br><br>
+                    <span>TransFlash</span>
+                    <p>Transporte de mercancia en toda Bogota</p>
+                </div>
+                <div class="formulario">
+                    <app-seccion-titulo titulo="Registro"></app-seccion-titulo>
+                    <app-login-form></app-login-form>
+                    <br>
+                    <a href="">Volver</a>
+                    <br><br>
+                    <a href="../transflash/transflash.component.html"></a>
+                </div>
             </div>
-            <div class="formulario">
-                <app-seccion-titulo titulo="Registro"></app-seccion-titulo>
-                <app-login-form></app-login-form>
-                <br>
-                <a href="">Volver</a>
-                <br><br>
-                <a href="../transflash/transflash.component.html"></a>
-            </div>
-        </div>
-    </mat-card>
-</body>
+        </mat-card>
+    </body>
+</div>
+<div *ngIf="login=='login'">
+    <app-menu></app-menu>
+</div>

@@ -31,7 +31,8 @@ export interface Cliente {
   styleUrls: ['./seccion-perfil.component.css']
 })
 export class SeccionPerfilComponent implements OnInit {
-  perfilCLiente = false;
+  tipoUsuario = '';
+  usuario = 0;
 
   fileUpload: File | null = null;
 
@@ -59,11 +60,14 @@ export class SeccionPerfilComponent implements OnInit {
     genero: ''
   }
 
-  constructor(private service: ApiService) { }
+  constructor(private service: ApiService) { 
+    this.tipoUsuario = JSON.parse(localStorage.getItem("Tipo") );
+    this.usuario = JSON.parse(localStorage.getItem("Usuario") );
+  }
 
   ngOnInit(): void {
-    if (this.perfilCLiente) {
-      this.service.getById('Cliente/Profile', '1001329488').subscribe((resp:any) => {
+    if (this.tipoUsuario == 'cl') {
+      this.service.getById('Cliente/Profile', this.usuario+'').subscribe((resp:any) => {
         console.log(resp);
 
         this.cliente.nombre = resp[0].nombre;
@@ -77,7 +81,7 @@ export class SeccionPerfilComponent implements OnInit {
       })
 
     } else {
-      this.service.getById('Conductor/Profile', '123456789').subscribe((resp:any) => {
+      this.service.getById('Conductor/Profile', this.usuario+'').subscribe((resp:any) => {
         console.log(resp);
 
         this.conductor.nombre = resp[0].nombre;

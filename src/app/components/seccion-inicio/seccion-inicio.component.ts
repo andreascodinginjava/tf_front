@@ -23,13 +23,17 @@ export class SeccionInicioComponent implements OnInit {
     {name: 'Solido', abbreviation: 'SOL'}
   ];
 
-  public cliente = true;
+  public tipoUsuario = '';
+  private usuario = 0;
   public controllerCliente = 'Servicio/Clientes';
   public controllerConductor = 'Servicio/Publicados'
   public serviciosCliente = [];
-  public serviciosPublicados = [];
+  public serviciosPublicados =  [];
 
-  constructor(private fb: FormBuilder, private service: ApiService) {}
+  constructor(private fb: FormBuilder, private service: ApiService) {
+    this.tipoUsuario = JSON.parse(localStorage.getItem("Tipo") );
+    this.usuario = JSON.parse(localStorage.getItem("Usuario") );
+  }
 
   onSubmit(data:any): void {
     //alert('Thanks!');
@@ -40,8 +44,8 @@ export class SeccionInicioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.cliente) {
-      this.service.getById(this.controllerCliente, "1001329488").subscribe((resp:any) => {
+    if (this.tipoUsuario == 'cl') {
+      this.service.getById(this.controllerCliente, this.usuario+'').subscribe((resp:any) => {
         console.log(resp);
         this.serviciosCliente = resp;
       })
